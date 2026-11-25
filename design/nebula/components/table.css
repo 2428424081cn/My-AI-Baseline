@@ -1,0 +1,16 @@
+/* Nebula UI · Table | needs ../tokens.css + ../base.css */
+/* ---------- 08 Table ---------- */
+.ui-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); }
+.ui-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13.5px; }
+.ui-table th {
+  padding: 11px 16px; text-align: left; font-size: 12px; font-weight: 650; color: var(--text-3);
+  letter-spacing: .03em; background: var(--surface-2); border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.ui-table th:first-child { border-top-left-radius: calc(var(--r-lg) - 1px); }
+.ui-table th:last-child { border-top-right-radius: calc(var(--r-lg) - 1px); }
+.ui-table td { padding: 13px 16px; border-bottom: 1px solid var(--border-2); vertical-align: middle; }
+.ui-table tbody tr { transition: background .15s; }
+.ui-table tbody tr:hover { background: var(--gray-50); }
+.ui-table tbody tr:last-child td { border-bottom: 0; }
+.ui-table .num { font-variant-numeric: tabular-nums; font-weight: 600; }

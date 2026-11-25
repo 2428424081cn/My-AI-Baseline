@@ -1,0 +1,13 @@
+/* LineKit · Dropdown menu | needs ../tokens.css + ../base.css */
+/* 下拉菜单 */
+.lk-dropdown { position: relative; display: inline-block; }
+.lk-dropdown-menu { position: absolute; z-index: var(--lk-z-dropdown); top: calc(100% + 8px); right: 0; width: max-content; min-width: 176px; max-width: calc(100vw - 32px); padding: 6px; border: var(--lk-border); border-radius: var(--lk-radius-small); background: var(--lk-surface); transform-origin: top right; }
+.lk-dropdown-menu[data-align="left"] { left: 0; right: auto; transform-origin: top left; }
+.lk-dropdown-menu.is-entering { animation: lk-pop-in 180ms var(--lk-ease); }
+.lk-menu-item { width: 100%; min-height: 42px; display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 0; border-radius: 7px; background: transparent; text-align: left; text-decoration: none; transition: background-color var(--lk-speed) ease, transform var(--lk-speed) var(--lk-ease); }
+.lk-menu-item:hover, .lk-menu-item:focus-visible { background: var(--lk-surface-muted); }
+.lk-menu-item:active { transform: scale(.98); }
+.lk-menu-item .lk-icon { --lk-icon-size: 18px; }
+.lk-menu-separator { height: 1px; margin: 5px 4px; background: var(--lk-line-soft); }
+
+@keyframes lk-pop-in { from { opacity: 0; transform: scale(.95) translateY(-4px); } to { opacity: 1; transform: scale(1) translateY(0); } }

@@ -1,0 +1,85 @@
+/* Linen M3 · Typography scale (opt-in) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   Opt-in Typography Scale Classes (Low-coupling utility classes)
+   ========================================================================== */
+.lm3-root {
+  font-family: var(--lm3-font-sans);
+  color: var(--lm3-on-surface);
+  background-color: var(--lm3-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.55;
+}
+
+.lm3-type-display-lg {
+  font-family: var(--lm3-font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+}
+.lm3-type-display-sm {
+  font-family: var(--lm3-font-serif);
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.lm3-type-headline-md {
+  font-family: var(--lm3-font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+.lm3-type-headline-sm {
+  font-family: var(--lm3-font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+.lm3-type-title-lg {
+  font-family: var(--lm3-font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.38;
+  letter-spacing: -0.01em;
+}
+.lm3-type-title-md {
+  font-family: var(--lm3-font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.lm3-type-body-lg {
+  font-family: var(--lm3-font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.lm3-type-body-md {
+  font-family: var(--lm3-font-sans);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.lm3-type-body-sm {
+  font-family: var(--lm3-font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--lm3-on-surface-variant);
+}
+.lm3-type-label-lg {
+  font-family: var(--lm3-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+.lm3-type-label-sm {
+  font-family: var(--lm3-font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--lm3-on-surface-variant);
+}

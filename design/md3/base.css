@@ -1,0 +1,74 @@
+/* Linen M3 · Base box-sizing, icon host, ripple, focus ring, shared spin keyframes */
+/* ==========================================================================
+   Linen M3 Design System — Universal Component Library (24 Components)
+   Claude Editorial Warmth × Google Material Design 3
+   Architecture: Low-coupling .lm3-* modules | Token-driven | Zero leaks
+   ========================================================================== */
+
+[class*="lm3-"],
+[class*="lm3-"]::before,
+[class*="lm3-"]::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   01. Icons & MD3 Ripple Layer
+   ========================================================================== */
+.lm3-icon-host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.lm3-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: transform var(--lm3-dur-medium-1) var(--lm3-ease-standard);
+}
+
+.lm3-ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: currentColor;
+  opacity: 0.18;
+  transform: scale(0);
+  animation: lm3-ripple-expand 540ms var(--lm3-ease-emphasized-decel) forwards;
+}
+@keyframes lm3-ripple-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.22;
+  }
+  70% {
+    opacity: 0.12;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Focus Ring Base */
+.lm3-focusable:focus-visible,
+.lm3-btn:focus-visible,
+.lm3-icon-btn:focus-visible,
+.lm3-fab:focus-visible,
+.lm3-chip:focus-visible,
+.lm3-segmented__btn:focus-visible,
+.lm3-tab:focus-visible,
+.lm3-nav-item:focus-visible,
+.lm3-list-item--interactive:focus-visible,
+.lm3-accordion__trigger:focus-visible,
+.lm3-menu__item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--lm3-surface), 0 0 0 4px var(--lm3-primary);
+}
+
+
+@keyframes lm3-spin {
+  to { transform: rotate(360deg); }
+}

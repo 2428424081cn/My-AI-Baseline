@@ -1,0 +1,10 @@
+/* LineKit · Card | needs ../tokens.css + ../base.css */
+/* 信息展示 */
+.lk-card { border: var(--lk-border); border-radius: var(--lk-radius); background: var(--lk-surface); padding: 24px; }
+.lk-card--flat { background: transparent; }
+.lk-card--interactive { transition: transform var(--lk-speed) var(--lk-ease), background-color var(--lk-speed) ease; }
+.lk-card--interactive:hover { transform: translateY(-3px) rotate(-.2deg); background: var(--lk-surface-muted); }
+
+@media (max-width: 560px) {
+  .lk-card { padding: 18px; }
+}

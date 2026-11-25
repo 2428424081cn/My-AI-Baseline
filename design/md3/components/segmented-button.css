@@ -1,0 +1,72 @@
+/* Linen M3 · Segmented button | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   04. Segmented Buttons (MD3 Connected Pill Toggle)
+   ========================================================================== */
+.lm3-segmented {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-full);
+  overflow: hidden;
+  background: var(--lm3-surface-container-lowest);
+}
+.lm3-segmented__btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 18px;
+  border: none;
+  border-right: 1px solid var(--lm3-outline-variant);
+  background: transparent;
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    padding var(--lm3-dur-medium-1) var(--lm3-ease-emphasized);
+}
+.lm3-segmented__btn:last-child { border-right: none; }
+.lm3-segmented__btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast);
+}
+.lm3-segmented__btn:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-segmented__btn[aria-pressed="true"] {
+  background-color: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  font-weight: 600;
+}
+.lm3-segmented__check {
+  display: inline-flex;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(0.5);
+  transition:
+    width var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    opacity var(--lm3-dur-medium-1) var(--lm3-ease-standard),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-spring);
+}
+.lm3-segmented__btn[aria-pressed="true"] .lm3-segmented__check {
+  width: 15px;
+  opacity: 1;
+  transform: scale(1);
+}
+.lm3-segmented--sm .lm3-segmented__btn {
+  height: 32px;
+  padding: 0 13px;
+  font-size: 0.8rem;
+}

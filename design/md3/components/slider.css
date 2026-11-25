@@ -1,0 +1,108 @@
+/* Linen M3 · Slider with value bubble | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   09. MD3 Expressive Slider (Segmented Track + Pill Handle + Value Bubble)
+   ========================================================================== */
+.lm3-slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  --lm3-slider-pct: 50%;
+}
+.lm3-slider__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.lm3-slider__value-text {
+  font-family: var(--lm3-font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  padding: 2px 8px;
+  border-radius: var(--lm3-radius-full);
+}
+.lm3-slider__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+.lm3-slider__track {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: var(--lm3-radius-full);
+  background: var(--lm3-surface-container-highest);
+  overflow: hidden;
+  pointer-events: none;
+}
+.lm3-slider__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--lm3-slider-pct);
+  background: var(--lm3-primary);
+  border-radius: var(--lm3-radius-full);
+  transition: width 40ms linear;
+}
+.lm3-slider__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.lm3-slider__handle {
+  position: absolute;
+  left: var(--lm3-slider-pct);
+  top: 50%;
+  width: 6px;
+  height: 28px;
+  border-radius: var(--lm3-radius-full);
+  background: var(--lm3-primary);
+  box-shadow: 0 0 0 4px var(--lm3-surface);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition:
+    width var(--lm3-dur-fast) var(--lm3-ease-spring),
+    height var(--lm3-dur-fast) var(--lm3-ease-spring),
+    box-shadow var(--lm3-dur-fast);
+}
+.lm3-slider__wrap:hover .lm3-slider__handle,
+.lm3-slider.is-active .lm3-slider__handle {
+  width: 8px;
+  height: 32px;
+  box-shadow: 0 0 0 4px var(--lm3-surface), 0 0 0 8px rgba(var(--lm3-primary-rgb), 0.16);
+}
+.lm3-slider__bubble {
+  position: absolute;
+  left: var(--lm3-slider-pct);
+  bottom: calc(100% + 4px);
+  transform: translate(-50%, 6px) scale(0.8);
+  padding: 4px 10px;
+  border-radius: var(--lm3-radius-full);
+  background: var(--lm3-inverse-surface);
+  color: var(--lm3-inverse-on-surface);
+  font-family: var(--lm3-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--lm3-dur-fast),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-spring);
+}
+.lm3-slider.is-active .lm3-slider__bubble,
+.lm3-slider__wrap:hover .lm3-slider__bubble {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}

@@ -1,0 +1,24 @@
+/* Nebula UI · Accordion | needs ../tokens.css + ../base.css */
+/* ---------- 08 Accordion ---------- */
+.ui-acc {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  transition: border-color .2s, box-shadow .2s;
+}
+.ui-acc + .ui-acc { margin-top: 10px; }
+.ui-acc.open { border-color: var(--brand-300); box-shadow: var(--shadow-sm); }
+.ui-acc__head {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px;
+  border: 0; background: transparent; cursor: pointer; text-align: left; border-radius: var(--r-md);
+  font: 0/0 a; color: inherit;
+}
+.ui-acc__icon {
+  flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
+}
+.ui-acc__title { flex: 1; min-width: 0; font: 600 14px/1.4 var(--font); color: var(--text-1); }
+.ui-acc__sub { display: block; font: 400 12px/1.4 var(--font); color: var(--text-3); margin-top: 1px; }
+.ui-acc__chev { flex: none; color: var(--text-3); transition: transform .3s var(--ease-spring); }
+.ui-acc.open .ui-acc__chev { transform: rotate(180deg); color: var(--brand-500); }
+.ui-acc__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s var(--ease-expo); }
+.ui-acc__panel > .ui-acc__inner { overflow: hidden; min-height: 0; }
+.ui-acc.open .ui-acc__panel { grid-template-rows: 1fr; }
+.ui-acc__content { padding: 2px 16px 16px 62px; font-size: 13px; color: var(--text-2); }

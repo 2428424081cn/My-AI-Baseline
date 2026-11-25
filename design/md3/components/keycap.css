@@ -1,0 +1,19 @@
+/* Linen M3 · Keycap | needs ../tokens.css + ../base.css */
+/* Tactile Keycap */
+.lm3-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: 1px solid var(--lm3-outline-variant);
+  border-bottom-width: 2px;
+  background: var(--lm3-surface-container-lowest);
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1;
+}

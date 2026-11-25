@@ -1,0 +1,59 @@
+/* LineKit · Design tokens (light + dark via data-lk-theme) */
+/*
+ * LineKit / 线物 · 原生简笔画组件库
+ * 三层变量：基础色板 → 语义颜色 → 组件变量。所有类名使用 lk- 前缀。
+ */
+:root {
+  color-scheme: light;
+  --lk-p-sage-100: oklch(0.92 0.035 145);
+  --lk-p-sage-300: oklch(0.79 0.045 145);
+  --lk-p-sage-500: oklch(0.66 0.055 145);
+  --lk-p-paper: oklch(0.985 0.003 145);
+  --lk-p-ink: oklch(0.21 0.015 145);
+  --lk-p-ink-soft: oklch(0.4 0.018 145);
+  --lk-p-crimson: oklch(0.56 0.21 12);
+  --lk-p-crimson-dark: oklch(0.43 0.18 12);
+  --lk-p-charcoal: oklch(0.25 0.012 145);
+
+  --lk-bg: var(--lk-p-sage-300);
+  --lk-surface: var(--lk-p-paper);
+  --lk-surface-muted: var(--lk-p-sage-100);
+  --lk-text: var(--lk-p-ink);
+  --lk-text-muted: var(--lk-p-ink-soft);
+  --lk-line: var(--lk-p-ink);
+  --lk-line-soft: color-mix(in oklch, var(--lk-p-ink) 22%, transparent);
+  --lk-accent: var(--lk-p-crimson);
+  --lk-accent-text: var(--lk-p-crimson-dark);
+  --lk-on-dark: var(--lk-p-paper);
+  --lk-on-accent: var(--lk-p-paper);
+  --lk-focus: var(--lk-p-crimson);
+
+  --lk-font-sans: "Avenir Next", Avenir, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --lk-font-display: "STKaiti", "KaiTi", "Noto Serif CJK SC", "Songti SC", serif;
+  --lk-font-mono: "SFMono-Regular", "Cascadia Code", "Liberation Mono", monospace;
+  --lk-radius: 14px 11px 15px 10px;
+  --lk-radius-small: 9px 7px 10px 8px;
+  --lk-border: 1.5px solid var(--lk-line);
+  --lk-ease: cubic-bezier(.22, 1, .36, 1);
+  --lk-speed: 220ms;
+  --lk-icon-size: 24px;
+  --lk-icon-stroke: 1.8;
+  --lk-z-dropdown: 30;
+  --lk-z-toast: 60;
+}
+
+:root[data-lk-theme="dark"] {
+  color-scheme: dark;
+  --lk-bg: var(--lk-p-ink);
+  --lk-surface: var(--lk-p-charcoal);
+  --lk-surface-muted: oklch(0.31 0.018 145);
+  --lk-text: var(--lk-p-paper);
+  --lk-text-muted: var(--lk-p-sage-100);
+  --lk-line: var(--lk-p-paper);
+  --lk-line-soft: color-mix(in oklch, var(--lk-p-paper) 24%, transparent);
+  --lk-accent: oklch(0.7 0.19 12);
+  --lk-accent-text: oklch(0.8 0.14 12);
+  --lk-on-dark: var(--lk-p-paper);
+  --lk-on-accent: var(--lk-p-ink);
+  --lk-focus: oklch(0.8 0.14 12);
+}

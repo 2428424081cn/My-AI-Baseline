@@ -1,0 +1,57 @@
+/* Linen M3 · Radio | needs ../tokens.css + ../base.css */
+/* MD3 Radio Button */
+.lm3-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--lm3-on-surface);
+}
+.lm3-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.lm3-radio__circle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--lm3-outline);
+  flex-shrink: 0;
+  transition: border-color var(--lm3-dur-fast);
+}
+.lm3-radio__circle::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  background: var(--lm3-primary);
+  opacity: 0;
+  transition: opacity var(--lm3-dur-fast);
+}
+.lm3-radio:hover .lm3-radio__circle::before { opacity: 0.08; }
+.lm3-radio__circle::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--lm3-primary);
+  transform: scale(0);
+  transition: transform var(--lm3-dur-medium-1) var(--lm3-ease-spring);
+}
+.lm3-radio__input:checked + .lm3-radio__circle {
+  border-color: var(--lm3-primary);
+}
+.lm3-radio__input:checked + .lm3-radio__circle::after {
+  transform: scale(1);
+}
+.lm3-radio__input:focus-visible + .lm3-radio__circle {
+  box-shadow: 0 0 0 2px var(--lm3-surface), 0 0 0 4px var(--lm3-primary);
+}

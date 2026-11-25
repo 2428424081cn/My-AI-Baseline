@@ -1,0 +1,7 @@
+/* LineKit · Tabs | needs ../tokens.css + ../base.css */
+/* 标签页：按钮使用 role=tab，面板使用 role=tabpanel */
+.lk-tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1.5px solid var(--lk-line); }
+.lk-tab { min-height: 44px; padding: 9px 15px; border: 0; border-radius: 9px 9px 0 0; background: transparent; font-weight: 650; transition: background-color var(--lk-speed) ease, color var(--lk-speed) ease, transform var(--lk-speed) var(--lk-ease); }
+.lk-tab:hover { background: var(--lk-surface-muted); transform: translateY(-1px); }
+.lk-tab[aria-selected="true"] { background: var(--lk-text); color: var(--lk-surface); }
+.lk-tab-panel { padding-top: 20px; }

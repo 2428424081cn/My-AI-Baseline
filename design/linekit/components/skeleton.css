@@ -1,0 +1,6 @@
+/* LineKit · Skeleton | needs ../tokens.css + ../base.css */
+.lk-skeleton { overflow: hidden; border-radius: 7px; background: var(--lk-surface-muted); animation: lk-pulse 1.3s ease-in-out infinite alternate; }
+.lk-skeleton--text { height: 16px; }
+.lk-skeleton--title { width: 55%; height: 30px; }
+
+@keyframes lk-pulse { from { opacity: .55; } to { opacity: 1; } }

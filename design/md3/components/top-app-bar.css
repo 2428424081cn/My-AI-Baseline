@@ -1,0 +1,25 @@
+/* Linen M3 · Top app bar (frosted) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   12. Top App Bar (Frosted Parchment Header)
+   ========================================================================== */
+.lm3-appbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--lm3-z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 62px;
+  padding: 0 22px;
+  background: var(--lm3-surface-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--lm3-hairline);
+}
+.lm3-appbar__group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}

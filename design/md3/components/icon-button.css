@@ -1,0 +1,54 @@
+/* Linen M3 · Icon button (toggle) | needs ../tokens.css + ../base.css */
+/* Icon Buttons */
+.lm3-icon-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--lm3-radius-full);
+  background: transparent;
+  color: var(--lm3-on-surface-variant);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    transform var(--lm3-dur-fast) var(--lm3-ease-spring);
+}
+.lm3-icon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-icon-btn:hover { color: var(--lm3-on-surface); }
+.lm3-icon-btn:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-icon-btn:active { transform: scale(0.92); }
+.lm3-icon-btn--sm { width: 32px; height: 32px; }
+.lm3-icon-btn--lg { width: 48px; height: 48px; }
+.lm3-icon-btn--filled {
+  background: var(--lm3-primary);
+  color: var(--lm3-on-primary);
+}
+.lm3-icon-btn--filled:hover { color: var(--lm3-on-primary); }
+.lm3-icon-btn--tonal {
+  background: var(--lm3-secondary-container);
+  color: var(--lm3-on-secondary-container);
+}
+.lm3-icon-btn--outlined {
+  border-color: var(--lm3-outline-variant);
+}
+.lm3-icon-btn[aria-pressed="true"] {
+  background: var(--lm3-primary-container);
+  color: var(--lm3-primary);
+  border-color: transparent;
+}

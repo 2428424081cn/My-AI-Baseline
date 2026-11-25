@@ -1,0 +1,10 @@
+/* Nebula UI · Skeleton | needs ../tokens.css + ../base.css */
+/* ---------- 05 Skeleton ---------- */
+.ui-skeleton {
+  border-radius: 7px;
+  background: linear-gradient(90deg, var(--skel-1) 25%, var(--skel-2) 50%, var(--skel-1) 75%);
+  background-size: 200% 100%;
+  animation: ui-shimmer 1.4s linear infinite;
+}
+.ui-skeleton--circle { border-radius: 50%; }
+@keyframes ui-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }

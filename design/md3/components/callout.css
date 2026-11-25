@@ -1,0 +1,54 @@
+/* Linen M3 · Callout / banner | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   22. Editorial Callouts / Banners (Claude Insight Blocks)
+   ========================================================================== */
+.lm3-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 15px 18px;
+  border-radius: var(--lm3-radius-md);
+  border: 1px solid var(--lm3-outline-variant);
+  border-left: 3.5px solid var(--lm3-primary);
+  background: var(--lm3-surface-container-low);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.lm3-callout__icon {
+  color: var(--lm3-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.lm3-callout__title {
+  font-weight: 600;
+  color: var(--lm3-on-surface);
+  margin-bottom: 3px;
+}
+.lm3-callout__text { color: var(--lm3-on-surface-variant); }
+
+.lm3-callout--success {
+  border-left-color: var(--lm3-success);
+  background: var(--lm3-success-container);
+  border-color: rgba(var(--lm3-success-rgb), 0.25);
+}
+.lm3-callout--success .lm3-callout__icon,
+.lm3-callout--success .lm3-callout__title { color: var(--lm3-on-success-container); }
+.lm3-callout--success .lm3-callout__text { color: var(--lm3-on-success-container); opacity: 0.88; }
+
+.lm3-callout--warning {
+  border-left-color: var(--lm3-warning);
+  background: var(--lm3-warning-container);
+  border-color: rgba(var(--lm3-warning-rgb), 0.25);
+}
+.lm3-callout--warning .lm3-callout__icon,
+.lm3-callout--warning .lm3-callout__title { color: var(--lm3-on-warning-container); }
+.lm3-callout--warning .lm3-callout__text { color: var(--lm3-on-warning-container); opacity: 0.88; }
+
+.lm3-callout--error {
+  border-left-color: var(--lm3-error);
+  background: var(--lm3-error-container);
+  border-color: rgba(var(--lm3-error-rgb), 0.25);
+}
+.lm3-callout--error .lm3-callout__icon,
+.lm3-callout--error .lm3-callout__title { color: var(--lm3-on-error-container); }
+.lm3-callout--error .lm3-callout__text { color: var(--lm3-on-error-container); opacity: 0.88; }

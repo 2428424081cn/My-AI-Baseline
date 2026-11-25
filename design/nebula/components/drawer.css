@@ -1,0 +1,25 @@
+/* Nebula UI · Drawer | needs ../tokens.css + ../base.css */
+/* ---------- 06 Drawer ---------- */
+.ui-drawer { position: fixed; inset: 0; z-index: 990; visibility: hidden; pointer-events: none; }
+.ui-drawer::before {
+  content: ""; position: absolute; inset: 0; background: rgba(10,14,26,.5);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  opacity: 0; transition: opacity .3s var(--ease-out);
+}
+.ui-drawer__panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(400px, 94vw);
+  display: flex; flex-direction: column;
+  background: var(--surface); border-left: 1px solid var(--border);
+  box-shadow: -12px 0 48px rgba(2,6,23,.22);
+  transform: translateX(102%); transition: transform .38s var(--ease-expo);
+}
+.ui-drawer--left .ui-drawer__panel { left: 0; right: auto; transform: translateX(-102%); border-left: 0; border-right: 1px solid var(--border); }
+.ui-drawer.open { visibility: visible; pointer-events: auto; }
+.ui-drawer.open::before { opacity: 1; }
+.ui-drawer.open .ui-drawer__panel { transform: none; }
+.ui-drawer__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 22px 14px; border-bottom: 1px solid var(--border-2); }
+.ui-drawer__title { font-size: 16px; font-weight: 700; }
+.ui-drawer__x { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 9px; background: transparent; color: var(--text-3); cursor: pointer; transition: background .15s, color .15s, transform .25s var(--ease-spring); }
+.ui-drawer__x:hover { background: var(--gray-100); color: var(--text-1); transform: rotate(90deg); }
+.ui-drawer__body { flex: 1; padding: 18px 22px; overflow-y: auto; }
+.ui-drawer__foot { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 22px 20px; border-top: 1px solid var(--border-2); }

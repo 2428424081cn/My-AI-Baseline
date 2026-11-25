@@ -1,0 +1,6 @@
+/* LineKit · Progress bar | needs ../tokens.css + ../base.css */
+/* 进度、加载、空状态、表格 */
+.lk-progress { display: grid; gap: 8px; }
+.lk-progress-meta { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; }
+.lk-progress-track { height: 10px; overflow: hidden; border: 1.5px solid var(--lk-line); border-radius: 50% 46% 52% 48% / 40%; background: var(--lk-surface); }
+.lk-progress-bar { width: 100%; height: 100%; background: var(--lk-accent); transform: scaleX(var(--lk-progress, 0)); transform-origin: left; transition: transform 260ms var(--lk-ease); }

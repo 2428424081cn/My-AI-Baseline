@@ -1,0 +1,342 @@
+/* Linen M3 · Design tokens (light, dark, accents sage / indigo / amber, reduced motion) */
+/* ==========================================================================
+   Linen M3 Design System — Design Tokens
+   Fusion of Anthropic Claude Editorial Warmth × Google Material Design 3
+   Namespace: --lm3-*  |  Zero global overrides  |  Light / Dark + 4 Accents
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* ---- Primary Role (Claude Signature Terracotta) ---- */
+  --lm3-primary: #be5634;
+  --lm3-primary-rgb: 190, 86, 52;
+  --lm3-primary-hover: #ad4b2b;
+  --lm3-primary-warm: #d97757;
+  --lm3-on-primary: #fffdfb;
+  --lm3-primary-container: #fbe5dc;
+  --lm3-on-primary-container: #5c210d;
+
+  /* ---- Secondary Role (Warm Stone / Oatmeal) ---- */
+  --lm3-secondary: #5f5a50;
+  --lm3-secondary-rgb: 95, 90, 80;
+  --lm3-on-secondary: #ffffff;
+  --lm3-secondary-container: #eae5d9;
+  --lm3-on-secondary-container: #26231e;
+
+  /* ---- Tertiary Role (Editorial Botanical Sage) ---- */
+  --lm3-tertiary: #3f6a5a;
+  --lm3-tertiary-rgb: 63, 106, 90;
+  --lm3-on-tertiary: #ffffff;
+  --lm3-tertiary-container: #dcece5;
+  --lm3-on-tertiary-container: #153328;
+
+  /* ---- MD3 Tonal Surface Ladder (Claude Alabaster Parchment) ---- */
+  --lm3-surface: #faf9f5;
+  --lm3-surface-dim: #efeae0;
+  --lm3-surface-bright: #fdfcf9;
+  --lm3-surface-container-lowest: #ffffff;
+  --lm3-surface-container-low: #f5f2ea;
+  --lm3-surface-container: #eeebe1;
+  --lm3-surface-container-high: #e7e2d6;
+  --lm3-surface-container-highest: #dfd9cb;
+  --lm3-surface-glass: rgba(250, 249, 245, 0.82);
+
+  /* ---- On-Surface Ink & Outlines ---- */
+  --lm3-on-surface: #1d1b18;
+  --lm3-on-surface-rgb: 29, 27, 24;
+  --lm3-on-surface-variant: #5c5850;
+  --lm3-on-surface-muted: #847f75;
+  --lm3-outline: #8c867b;
+  --lm3-outline-variant: #ded9cd;
+  --lm3-hairline: rgba(29, 27, 24, 0.08);
+
+  /* ---- Inverse Surface (MD3 Snackbar / Tooltip) ---- */
+  --lm3-inverse-surface: #25231f;
+  --lm3-inverse-on-surface: #f5f2eb;
+  --lm3-inverse-primary: #f09d7f;
+
+  /* ---- Semantic Roles (Harmonized Warm Pigments) ---- */
+  --lm3-error: #b83b32;
+  --lm3-error-rgb: 184, 59, 50;
+  --lm3-on-error: #ffffff;
+  --lm3-error-container: #fce4e2;
+  --lm3-on-error-container: #5c1611;
+
+  --lm3-success: #2b7553;
+  --lm3-success-rgb: 43, 117, 83;
+  --lm3-on-success: #ffffff;
+  --lm3-success-container: #dcf1e6;
+  --lm3-on-success-container: #113826;
+
+  --lm3-warning: #9e6114;
+  --lm3-warning-rgb: 158, 97, 20;
+  --lm3-on-warning: #ffffff;
+  --lm3-warning-container: #fbf0d8;
+  --lm3-on-warning-container: #4c2d05;
+
+  --lm3-info: #365f87;
+  --lm3-info-rgb: 54, 95, 135;
+  --lm3-on-info: #ffffff;
+  --lm3-info-container: #e1eef9;
+  --lm3-on-info-container: #142f49;
+
+  /* ---- Scrim & State Layer Opacities (MD3 Spec) ---- */
+  --lm3-scrim: rgba(25, 23, 20, 0.42);
+  --lm3-state-hover: 0.07;
+  --lm3-state-focus: 0.11;
+  --lm3-state-pressed: 0.12;
+  --lm3-state-dragged: 0.16;
+
+  /* ---- Warm Ink-Tinted MD3 Elevations ---- */
+  --lm3-elev-0: none;
+  --lm3-elev-1:
+    0 1px 2px rgba(29, 27, 24, 0.05),
+    0 1px 3px 1px rgba(29, 27, 24, 0.04);
+  --lm3-elev-2:
+    0 1px 2px rgba(29, 27, 24, 0.06),
+    0 3px 8px 1px rgba(29, 27, 24, 0.05);
+  --lm3-elev-3:
+    0 2px 6px rgba(29, 27, 24, 0.07),
+    0 8px 20px -2px rgba(29, 27, 24, 0.08);
+  --lm3-elev-4:
+    0 4px 10px rgba(29, 27, 24, 0.08),
+    0 14px 32px -4px rgba(29, 27, 24, 0.11);
+  --lm3-elev-5:
+    0 8px 18px rgba(29, 27, 24, 0.10),
+    0 24px 48px -8px rgba(29, 27, 24, 0.15);
+
+  /* ---- Typography (Claude Editorial Serif + Clean Humanist Sans) ---- */
+  --lm3-font-serif:
+    'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia,
+    'Songti SC', 'STSong', 'Noto Serif SC', serif;
+  --lm3-font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Segoe UI',
+    system-ui, sans-serif;
+  --lm3-font-mono:
+    'JetBrains Mono', 'SF Mono', ui-monospace, 'Cascadia Code',
+    Menlo, Consolas, monospace;
+
+  /* ---- MD3 Shape Scale ---- */
+  --lm3-radius-xs: 4px;
+  --lm3-radius-sm: 8px;
+  --lm3-radius-md: 12px;
+  --lm3-radius-lg: 16px;
+  --lm3-radius-xl: 24px;
+  --lm3-radius-2xl: 28px;
+  --lm3-radius-full: 9999px;
+
+  /* ---- MD3 Motion Physics ---- */
+  --lm3-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --lm3-ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --lm3-ease-emphasized-accel: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --lm3-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --lm3-ease-standard-decel: cubic-bezier(0, 0, 0, 1);
+  --lm3-ease-spring: cubic-bezier(0.34, 1.48, 0.64, 1);
+
+  --lm3-dur-fast: 120ms;
+  --lm3-dur-medium-1: 200ms;
+  --lm3-dur-medium-2: 280ms;
+  --lm3-dur-long-1: 380ms;
+  --lm3-dur-long-2: 480ms;
+
+  /* ---- Code Block Warm Editorial Syntax Palette ---- */
+  --lm3-code-bg: #f4f1e8;
+  --lm3-code-header: #ebe7dc;
+  --lm3-code-ink: #2c2925;
+  --lm3-syn-tag: #b24827;
+  --lm3-syn-attr: #7d5b1f;
+  --lm3-syn-str: #2f6d52;
+  --lm3-syn-kw: #5a4b8c;
+  --lm3-syn-com: #8a8478;
+
+  /* ---- Z-Index Layers ---- */
+  --lm3-z-sticky: 20;
+  --lm3-z-dropdown: 40;
+  --lm3-z-backdrop: 60;
+  --lm3-z-sheet: 70;
+  --lm3-z-dialog: 80;
+  --lm3-z-toast: 90;
+  --lm3-z-tooltip: 100;
+}
+
+/* ==========================================================================
+   Dark Theme — Claude Warm Obsidian × MD3 Elevated Dark Surfaces
+   ========================================================================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --lm3-primary: #e88d6d;
+  --lm3-primary-rgb: 232, 141, 109;
+  --lm3-primary-hover: #ef9c7f;
+  --lm3-primary-warm: #f0a184;
+  --lm3-on-primary: #3b1306;
+  --lm3-primary-container: #5b2918;
+  --lm3-on-primary-container: #ffddd1;
+
+  --lm3-secondary: #cbc5b8;
+  --lm3-secondary-rgb: 203, 197, 184;
+  --lm3-on-secondary: #2e2b25;
+  --lm3-secondary-container: #3a3730;
+  --lm3-on-secondary-container: #ece7dc;
+
+  --lm3-tertiary: #8cc2ac;
+  --lm3-tertiary-rgb: 140, 194, 172;
+  --lm3-on-tertiary: #113528;
+  --lm3-tertiary-container: #224236;
+  --lm3-on-tertiary-container: #d3eee3;
+
+  --lm3-surface: #191816;
+  --lm3-surface-dim: #131210;
+  --lm3-surface-bright: #262420;
+  --lm3-surface-container-lowest: #141311;
+  --lm3-surface-container-low: #201e1b;
+  --lm3-surface-container: #262420;
+  --lm3-surface-container-high: #302d28;
+  --lm3-surface-container-highest: #3b3731;
+  --lm3-surface-glass: rgba(25, 24, 22, 0.84);
+
+  --lm3-on-surface: #efece6;
+  --lm3-on-surface-rgb: 239, 236, 230;
+  --lm3-on-surface-variant: #b8b2a6;
+  --lm3-on-surface-muted: #8a8479;
+  --lm3-outline: #706b62;
+  --lm3-outline-variant: #38352f;
+  --lm3-hairline: rgba(239, 236, 230, 0.09);
+
+  --lm3-inverse-surface: #efece6;
+  --lm3-inverse-on-surface: #201e1b;
+  --lm3-inverse-primary: #be5634;
+
+  --lm3-error: #f08a82;
+  --lm3-error-rgb: 240, 138, 130;
+  --lm3-on-error: #4e110d;
+  --lm3-error-container: #63221d;
+  --lm3-on-error-container: #ffdcd9;
+
+  --lm3-success: #79c9a2;
+  --lm3-success-rgb: 121, 201, 162;
+  --lm3-on-success: #0d3623;
+  --lm3-success-container: #1c4734;
+  --lm3-on-success-container: #d3f2e2;
+
+  --lm3-warning: #e5b363;
+  --lm3-warning-rgb: 229, 179, 99;
+  --lm3-on-warning: #3e2404;
+  --lm3-warning-container: #523611;
+  --lm3-on-warning-container: #fce9c7;
+
+  --lm3-info: #8bb8e0;
+  --lm3-info-rgb: 139, 184, 224;
+  --lm3-on-info: #0f2c47;
+  --lm3-info-container: #1f3d59;
+  --lm3-on-info-container: #d9ecfc;
+
+  --lm3-scrim: rgba(0, 0, 0, 0.62);
+
+  --lm3-elev-1:
+    0 1px 2px rgba(0, 0, 0, 0.30),
+    0 1px 3px 1px rgba(0, 0, 0, 0.18);
+  --lm3-elev-2:
+    0 2px 4px rgba(0, 0, 0, 0.34),
+    0 4px 12px 1px rgba(0, 0, 0, 0.24);
+  --lm3-elev-3:
+    0 4px 10px rgba(0, 0, 0, 0.38),
+    0 10px 26px -2px rgba(0, 0, 0, 0.32);
+  --lm3-elev-4:
+    0 6px 14px rgba(0, 0, 0, 0.42),
+    0 16px 36px -4px rgba(0, 0, 0, 0.38);
+  --lm3-elev-5:
+    0 10px 22px rgba(0, 0, 0, 0.48),
+    0 28px 54px -6px rgba(0, 0, 0, 0.46);
+
+  --lm3-code-bg: #1e1c19;
+  --lm3-code-header: #272420;
+  --lm3-code-ink: #ebe7df;
+  --lm3-syn-tag: #eb9375;
+  --lm3-syn-attr: #dfc07b;
+  --lm3-syn-str: #8bc6a9;
+  --lm3-syn-kw: #bba7eb;
+  --lm3-syn-com: #837d72;
+}
+
+/* ==========================================================================
+   Material You Dynamic Accent Seeds (4 Editorial Palettes)
+   Apply data-accent="sage" | "indigo" | "amber" on <html> or any container
+   ========================================================================== */
+
+/* Botanical Sage */
+[data-accent="sage"] {
+  --lm3-primary: #356957;
+  --lm3-primary-rgb: 53, 105, 87;
+  --lm3-primary-hover: #2c5949;
+  --lm3-primary-warm: #4a8570;
+  --lm3-on-primary: #ffffff;
+  --lm3-primary-container: #d8ece4;
+  --lm3-on-primary-container: #103226;
+}
+[data-theme="dark"][data-accent="sage"],
+[data-theme="dark"] [data-accent="sage"] {
+  --lm3-primary: #86c7af;
+  --lm3-primary-rgb: 134, 199, 175;
+  --lm3-primary-hover: #99d3bd;
+  --lm3-primary-warm: #99d3bd;
+  --lm3-on-primary: #0f3527;
+  --lm3-primary-container: #1f483a;
+  --lm3-on-primary-container: #d5f0e5;
+}
+
+/* Editorial Indigo */
+[data-accent="indigo"] {
+  --lm3-primary: #435894;
+  --lm3-primary-rgb: 67, 88, 148;
+  --lm3-primary-hover: #384a7f;
+  --lm3-primary-warm: #5b72b5;
+  --lm3-on-primary: #ffffff;
+  --lm3-primary-container: #dfe6fb;
+  --lm3-on-primary-container: #172754;
+}
+[data-theme="dark"][data-accent="indigo"],
+[data-theme="dark"] [data-accent="indigo"] {
+  --lm3-primary: #a3b6f0;
+  --lm3-primary-rgb: 163, 182, 240;
+  --lm3-primary-hover: #b6c6f5;
+  --lm3-primary-warm: #b6c6f5;
+  --lm3-on-primary: #152552;
+  --lm3-primary-container: #2a3a6b;
+  --lm3-on-primary-container: #dfe7ff;
+}
+
+/* Warm Ochre Amber */
+[data-accent="amber"] {
+  --lm3-primary: #945f16;
+  --lm3-primary-rgb: 148, 95, 22;
+  --lm3-primary-hover: #7f5011;
+  --lm3-primary-warm: #bd7c24;
+  --lm3-on-primary: #fffdf9;
+  --lm3-primary-container: #fae9cc;
+  --lm3-on-primary-container: #452903;
+}
+[data-theme="dark"][data-accent="amber"],
+[data-theme="dark"] [data-accent="amber"] {
+  --lm3-primary: #e8b566;
+  --lm3-primary-rgb: 232, 181, 102;
+  --lm3-primary-hover: #f0c27a;
+  --lm3-primary-warm: #f0c27a;
+  --lm3-on-primary: #3c2303;
+  --lm3-primary-container: #54370e;
+  --lm3-on-primary-container: #fce9c7;
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --lm3-dur-fast: 1ms;
+    --lm3-dur-medium-1: 1ms;
+    --lm3-dur-medium-2: 1ms;
+    --lm3-dur-long-1: 1ms;
+    --lm3-dur-long-2: 1ms;
+  }
+}

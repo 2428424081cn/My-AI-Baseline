@@ -1,0 +1,43 @@
+/* LineKit · Button | needs ../tokens.css + ../base.css */
+/* 按钮：默认、实心、朱红、幽灵、危险、图标 */
+.lk-btn {
+  --lk-btn-bg: transparent;
+  --lk-btn-text: var(--lk-text);
+  --lk-btn-border: var(--lk-line);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1.5px solid var(--lk-btn-border);
+  border-radius: var(--lk-radius-small);
+  background: var(--lk-btn-bg);
+  color: var(--lk-btn-text);
+  font-weight: 650;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: transform var(--lk-speed) var(--lk-ease), background-color var(--lk-speed) ease, color var(--lk-speed) ease, opacity var(--lk-speed) ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.lk-btn:hover:not(:disabled) { transform: translateY(-2px) rotate(-.35deg); }
+.lk-btn:hover:not(:disabled) .lk-icon { transform: rotate(4deg); }
+.lk-btn:active:not(:disabled) { transform: translateY(1px) scale(.98); }
+.lk-btn:disabled, .lk-btn[aria-disabled="true"] { cursor: not-allowed; opacity: .42; }
+.lk-btn--primary { --lk-btn-bg: var(--lk-text); --lk-btn-text: var(--lk-surface); }
+.lk-btn--accent { --lk-btn-bg: var(--lk-accent); --lk-btn-text: var(--lk-on-accent); --lk-btn-border: var(--lk-accent); }
+.lk-btn--soft { --lk-btn-bg: var(--lk-surface-muted); }
+.lk-btn--ghost { --lk-btn-border: transparent; }
+.lk-btn--ghost:hover:not(:disabled) { --lk-btn-bg: var(--lk-surface-muted); }
+.lk-btn--danger { --lk-btn-text: var(--lk-accent-text); --lk-btn-border: var(--lk-accent); }
+.lk-btn--sm { min-height: 36px; padding: 6px 12px; font-size: 14px; }
+.lk-btn--lg { min-height: 52px; padding: 12px 24px; font-size: 17px; }
+.lk-btn--icon { width: 44px; padding: 0; border-radius: 50% 46% 48% 45%; }
+.lk-btn--block { width: 100%; }
+.lk-btn.is-loading { pointer-events: none; opacity: .72; }
+.lk-btn.is-loading .lk-icon { animation: lk-spin .8s linear infinite; }
+
+@media (max-width: 560px) {
+  .lk-btn--sm { min-height: 44px; }
+}

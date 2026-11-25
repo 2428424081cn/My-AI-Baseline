@@ -1,0 +1,90 @@
+/* Linen M3 · Tabs (ink indicator / pill) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   10. Tabs (MD3 Sliding Ink Indicator & Tonal Pill Tabs)
+   ========================================================================== */
+.lm3-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.lm3-tablist {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--lm3-outline-variant);
+}
+.lm3-tab {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  background: transparent;
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-tab:hover { color: var(--lm3-on-surface); }
+.lm3-tab[aria-selected="true"] {
+  color: var(--lm3-primary);
+  font-weight: 600;
+}
+.lm3-tablist__indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--lm3-primary);
+  transition:
+    transform var(--lm3-dur-medium-2) var(--lm3-ease-emphasized),
+    width var(--lm3-dur-medium-2) var(--lm3-ease-emphasized);
+  pointer-events: none;
+}
+
+/* Pill Tabs Variant */
+.lm3-tablist--pill {
+  border-bottom: none;
+  background: var(--lm3-surface-container);
+  padding: 4px;
+  border-radius: var(--lm3-radius-full);
+  align-self: flex-start;
+}
+.lm3-tablist--pill .lm3-tab {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: var(--lm3-radius-full);
+  z-index: 1;
+}
+.lm3-tablist--pill .lm3-tab[aria-selected="true"] {
+  color: var(--lm3-on-surface);
+}
+.lm3-tablist--pill .lm3-tablist__indicator {
+  top: 4px;
+  bottom: 4px;
+  height: auto;
+  border-radius: var(--lm3-radius-full);
+  background: var(--lm3-surface-container-lowest);
+  box-shadow: var(--lm3-elev-1);
+  z-index: 0;
+}
+
+.lm3-tabpanel {
+  padding-top: 16px;
+  animation: lm3-fade-up var(--lm3-dur-medium-1) var(--lm3-ease-emphasized-decel);
+}
+.lm3-tabpanel[hidden] { display: none; }
+
+@keyframes lm3-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,99 @@
+/* Linen M3 · Navigation drawer item / rail | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   11. Navigation Rail, Drawer Items & Structured List
+   ========================================================================== */
+.lm3-nav-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--lm3-radius-full);
+  background: transparent;
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    color var(--lm3-dur-fast);
+}
+.lm3-nav-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast);
+}
+.lm3-nav-item:hover { color: var(--lm3-on-surface); }
+.lm3-nav-item:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-nav-item.is-active,
+.lm3-nav-item[aria-current="page"] {
+  background: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  font-weight: 600;
+}
+
+/* Compact Vertical Rail Destination (MD3 Signature Pill Expansion) */
+.lm3-rail-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 64px;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--lm3-dur-fast);
+}
+.lm3-rail-item__pill {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 32px;
+  border-radius: var(--lm3-radius-full);
+}
+.lm3-rail-item__pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lm3-primary-container);
+  transform: scaleX(0.35);
+  opacity: 0;
+  transition:
+    transform var(--lm3-dur-medium-2) var(--lm3-ease-spring),
+    opacity var(--lm3-dur-fast);
+}
+.lm3-rail-item__pill > * { position: relative; z-index: 1; }
+.lm3-rail-item:hover { color: var(--lm3-on-surface); }
+.lm3-rail-item:hover .lm3-rail-item__pill {
+  background: rgba(var(--lm3-on-surface-rgb), 0.06);
+}
+.lm3-rail-item.is-active,
+.lm3-rail-item[aria-current="page"] {
+  color: var(--lm3-on-primary-container);
+  font-weight: 600;
+}
+.lm3-rail-item.is-active .lm3-rail-item__pill::before,
+.lm3-rail-item[aria-current="page"] .lm3-rail-item__pill::before {
+  transform: scaleX(1);
+  opacity: 1;
+}

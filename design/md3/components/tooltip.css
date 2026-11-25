@@ -1,0 +1,43 @@
+/* Linen M3 · Tooltip (CSS only) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   18. Pure-CSS Tooltips ([data-lm3-tooltip])
+   ========================================================================== */
+[data-lm3-tooltip] {
+  position: relative;
+}
+[data-lm3-tooltip]::after {
+  content: attr(data-lm3-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translate(-50%, 4px) scale(0.95);
+  z-index: var(--lm3-z-tooltip);
+  padding: 6px 11px;
+  border-radius: var(--lm3-radius-sm);
+  background: var(--lm3-inverse-surface);
+  color: var(--lm3-inverse-on-surface);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  box-shadow: var(--lm3-elev-2);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--lm3-dur-fast) var(--lm3-ease-standard),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized-decel);
+}
+[data-lm3-tooltip]:hover::after,
+[data-lm3-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+[data-lm3-tooltip-pos="bottom"]::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+  transform: translate(-50%, -4px) scale(0.95);
+}
+[data-lm3-tooltip-pos="bottom"]:hover::after {
+  transform: translate(-50%, 0) scale(1);
+}

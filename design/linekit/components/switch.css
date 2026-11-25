@@ -1,0 +1,8 @@
+/* LineKit · Switch | needs ../tokens.css + ../base.css */
+.lk-switch { min-height: 44px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+.lk-switch input { position: absolute; opacity: 0; }
+.lk-switch-track { width: 48px; height: 27px; padding: 3px; border: var(--lk-border); border-radius: 48% 52% 46% 54% / 50%; background: var(--lk-surface); transition: background-color var(--lk-speed) ease; }
+.lk-switch-thumb { display: block; width: 17px; height: 17px; border-radius: 50%; background: var(--lk-text); transition: transform var(--lk-speed) var(--lk-ease), background-color var(--lk-speed) ease; }
+.lk-switch input:checked + .lk-switch-track { background: var(--lk-text); }
+.lk-switch input:checked + .lk-switch-track .lk-switch-thumb { background: var(--lk-surface); transform: translateX(20px) rotate(12deg); }
+.lk-switch input:focus-visible + .lk-switch-track { outline: 2px dashed var(--lk-focus); outline-offset: 4px; }

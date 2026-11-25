@@ -1,0 +1,19 @@
+/* Nebula UI · Switch | needs ../tokens.css + ../base.css */
+/* 开关 Switch：input 本体即控件，可聚焦 */
+.ui-switch {
+  appearance: none; -webkit-appearance: none; position: relative; flex: none;
+  width: 44px; height: 24px; margin: 0; cursor: pointer; border-radius: var(--r-full);
+  background: var(--gray-300); transition: background .25s var(--ease-out);
+}
+.ui-switch::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  transition: transform .28s var(--ease-spring);
+}
+.ui-switch:checked { background: var(--brand-600); }
+.ui-switch:checked::after { transform: translateX(20px); }
+.ui-switch:focus-visible { box-shadow: var(--ring); }
+.ui-switch--sm { width: 36px; height: 20px; }
+.ui-switch--sm::after { width: 16px; height: 16px; }
+.ui-switch--sm:checked::after { transform: translateX(16px); }
+.ui-switch:disabled { opacity: .45; cursor: not-allowed; }

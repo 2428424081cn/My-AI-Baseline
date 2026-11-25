@@ -1,0 +1,42 @@
+/* Linen M3 · Prompt composer (AI input box) | needs ../tokens.css + ../base.css */
+/* Claude Signature Prompt Composer */
+.lm3-composer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px 12px;
+  background: var(--lm3-surface-container-lowest);
+  border: 1.5px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-xl);
+  box-shadow: var(--lm3-elev-2);
+  transition:
+    border-color var(--lm3-dur-medium-1) var(--lm3-ease-standard),
+    box-shadow var(--lm3-dur-medium-1) var(--lm3-ease-emphasized);
+}
+.lm3-composer:focus-within {
+  border-color: rgba(var(--lm3-primary-rgb), 0.65);
+  box-shadow: var(--lm3-elev-3), 0 0 0 4px rgba(var(--lm3-primary-rgb), 0.10);
+}
+.lm3-composer__input {
+  width: 100%;
+  min-height: 44px;
+  max-height: 180px;
+  border: none;
+  background: transparent;
+  color: var(--lm3-on-surface);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+}
+.lm3-composer__input::placeholder {
+  color: var(--lm3-on-surface-muted);
+}
+.lm3-composer__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,10 @@
+/* LineKit · Accordion (native details) | needs ../tokens.css + ../base.css */
+/* 折叠面板使用原生 details / summary */
+.lk-accordion { border-top: 1.5px solid var(--lk-line); }
+.lk-accordion-item { border-bottom: 1.5px solid var(--lk-line); }
+.lk-accordion summary { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; list-style: none; font-weight: 700; }
+.lk-accordion summary::-webkit-details-marker { display: none; }
+.lk-accordion summary::after { content: "+"; font-family: var(--lk-font-mono); font-size: 24px; font-weight: 400; transition: transform var(--lk-speed) var(--lk-ease); }
+.lk-accordion details[open] summary::after { transform: rotate(45deg); }
+.lk-accordion-content { padding: 0 32px 20px 0; color: var(--lk-text-muted); }
+.lk-accordion-content p { margin: 0; max-width: 70ch; }

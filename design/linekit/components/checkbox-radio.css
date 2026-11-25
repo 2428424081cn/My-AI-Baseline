@@ -1,0 +1,20 @@
+/* LineKit · Checkbox / radio | needs ../tokens.css + ../base.css */
+.lk-choice { min-height: 44px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+.lk-choice input { position: absolute; opacity: 0; pointer-events: none; }
+.lk-choice-mark {
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: var(--lk-border);
+  border-radius: 6px 5px 7px 4px;
+  background: var(--lk-surface);
+  transition: transform var(--lk-speed) var(--lk-ease), background-color var(--lk-speed) ease;
+}
+.lk-choice-mark::after { content: ""; width: 10px; height: 6px; border-left: 2px solid var(--lk-surface); border-bottom: 2px solid var(--lk-surface); opacity: 0; transform: rotate(-45deg) scale(.5); transition: transform var(--lk-speed) var(--lk-ease), opacity var(--lk-speed) ease; }
+.lk-choice input:checked + .lk-choice-mark { background: var(--lk-text); transform: rotate(-3deg); }
+.lk-choice input:checked + .lk-choice-mark::after { opacity: 1; transform: rotate(-45deg) scale(1); }
+.lk-choice input:focus-visible + .lk-choice-mark { outline: 2px dashed var(--lk-focus); outline-offset: 4px; }
+.lk-choice--radio .lk-choice-mark { border-radius: 50%; }
+.lk-choice--radio .lk-choice-mark::after { width: 9px; height: 9px; border: 0; border-radius: 50%; background: var(--lk-surface); }

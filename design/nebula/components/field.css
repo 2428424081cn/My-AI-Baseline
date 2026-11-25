@@ -1,0 +1,55 @@
+/* Nebula UI · Text field / prefix icon / error shake / select | needs ../tokens.css + ../base.css */
+/* ---------- 04 表单控件 ---------- */
+.ui-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.ui-field__label { font-size: 13px; font-weight: 600; color: var(--text-1); }
+.ui-field__label em { font-style: normal; color: var(--danger); margin-left: 2px; }
+.ui-field__hint { font-size: 12px; color: var(--text-3); }
+.ui-field__error { font-size: 12px; color: var(--danger-text); display: none; align-items: center; gap: 5px; }
+.ui-field--error .ui-field__error { display: flex; }
+.ui-field--error .ui-field__hint { display: none; }
+
+.ui-input, .ui-textarea, .ui-select {
+  width: 100%; height: 38px; padding: 0 12px; font: 400 14px/1.4 var(--font); color: var(--text-1);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  transition: border-color .18s, box-shadow .18s, background-color .18s;
+}
+.ui-textarea { height: auto; min-height: 88px; padding: 10px 12px; resize: vertical; line-height: 1.6; }
+.ui-input::placeholder, .ui-textarea::placeholder { color: var(--text-3); }
+.ui-input:hover, .ui-textarea:hover, .ui-select:hover { border-color: var(--gray-300); }
+.ui-input:focus, .ui-textarea:focus, .ui-select:focus { border-color: var(--brand-500); box-shadow: var(--ring); outline: none; }
+.ui-input:disabled, .ui-textarea:disabled, .ui-select:disabled { background: var(--gray-100); color: var(--text-3); cursor: not-allowed; }
+.ui-input--sm, .ui-select.ui-input--sm { height: 32px; font-size: 13px; }
+.ui-input--lg, .ui-select.ui-input--lg { height: 44px; font-size: 15px; }
+
+/* 带图标 / 前后缀 */
+.ui-input-wrap { position: relative; display: flex; align-items: center; }
+.ui-input-wrap > .ui-icon { position: absolute; left: 12px; color: var(--text-3); pointer-events: none; }
+.ui-input-wrap > .ui-btn { position: absolute; right: 5px; }
+.ui-input--icon { padding-left: 36px; }
+.ui-input--suffix { padding-right: 40px; }
+.ui-input-affix {
+  display: flex; align-items: center; height: 38px; padding: 0 12px; font-size: 14px;
+  color: var(--text-3); background: var(--gray-100);
+  border: 1px solid var(--border); border-radius: var(--r-md) 0 0 var(--r-md); border-right: 0;
+}
+.ui-input-group { display: flex; }
+.ui-input-group .ui-input { border-radius: 0 var(--r-md) var(--r-md) 0; }
+.ui-input-group .ui-input:focus { box-shadow: none; border-color: var(--brand-500); }
+.ui-input-group:focus-within .ui-input-affix { border-color: var(--brand-500); color: var(--brand-600); }
+
+/* 校验错误 + 抖动 */
+.ui-field--error .ui-input, .ui-field--error .ui-textarea, .ui-field--error .ui-select {
+  border-color: var(--danger); animation: ui-shake .4s var(--ease-out);
+}
+.ui-field--error .ui-input:focus { box-shadow: var(--ring-danger); }
+@keyframes ui-shake {
+  20%, 60% { transform: translateX(3px); }
+  40%, 80% { transform: translateX(-3px); }
+}
+
+/* 原生下拉美化 */
+.ui-select {
+  appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+}

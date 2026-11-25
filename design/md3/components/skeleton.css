@@ -1,0 +1,36 @@
+/* Linen M3 · Skeleton shimmer | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   23. Skeleton Shimmer, Code Blocks, Dividers & Keycaps
+   ========================================================================== */
+.lm3-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--lm3-radius-sm);
+  background: var(--lm3-surface-container-high);
+}
+.lm3-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.42) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: lm3-shimmer 1.6s ease-in-out infinite;
+}
+[data-theme="dark"] .lm3-skeleton::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+}
+@keyframes lm3-shimmer {
+  to { transform: translateX(100%); }
+}
+.lm3-skeleton--line { height: 14px; border-radius: 7px; }
+.lm3-skeleton--circle { border-radius: 50%; }

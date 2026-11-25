@@ -1,0 +1,39 @@
+/* Nebula UI · Toast | needs ../tokens.css + ../base.css */
+/* ---------- 05 Toast ---------- */
+.ui-toast-wrap {
+  position: fixed; top: 18px; right: 18px; z-index: 1200;
+  display: flex; flex-direction: column; gap: 10px; width: min(360px, calc(100vw - 36px));
+  pointer-events: none;
+}
+.ui-toast {
+  position: relative; pointer-events: auto; overflow: hidden;
+  display: flex; align-items: flex-start; gap: 10px; padding: 13px 14px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(calc(100% + 40px)); opacity: 0;
+  transition: transform .4s var(--ease-spring), opacity .3s var(--ease-out);
+}
+.ui-toast.show { transform: translateX(0); opacity: 1; }
+.ui-toast.hide { transform: translateX(24px) scale(.96); opacity: 0; }
+.ui-toast__icon { flex: none; margin-top: 1px; }
+.ui-toast__content { flex: 1; min-width: 0; }
+.ui-toast__title { font-size: 13.5px; font-weight: 650; }
+.ui-toast__msg { font-size: 13px; color: var(--text-2); margin-top: 1px; word-break: break-word; }
+.ui-toast__close {
+  flex: none; display: grid; place-items: center; width: 24px; height: 24px; margin: -2px -3px 0 0;
+  border: 0; border-radius: 6px; background: transparent; color: var(--text-3); cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.ui-toast__close:hover { background: var(--gray-100); color: var(--text-1); }
+.ui-toast__close .ui-icon { width: 13px; height: 13px; }
+.ui-toast__bar { position: absolute; left: 0; bottom: 0; height: 2.5px; width: 100%; animation: ui-toast-bar linear forwards; }
+.ui-toast-wrap:hover .ui-toast__bar { animation-play-state: paused; }
+@keyframes ui-toast-bar { from { width: 100%; } to { width: 0; } }
+.ui-toast--success .ui-toast__icon, .ui-toast--success .ui-toast__bar { color: var(--success); background: var(--success); }
+.ui-toast--success .ui-toast__bar { background: var(--success); }
+.ui-toast--error   .ui-toast__icon { color: var(--danger); }
+.ui-toast--error   .ui-toast__bar { background: var(--danger); }
+.ui-toast--warning .ui-toast__icon { color: var(--warning); }
+.ui-toast--warning .ui-toast__bar { background: var(--warning); }
+.ui-toast--info    .ui-toast__icon { color: var(--info); }
+.ui-toast--info    .ui-toast__bar { background: var(--info); }

@@ -1,0 +1,32 @@
+/* Nebula UI · Tooltip (CSS only) | needs ../tokens.css + ../base.css */
+/* ---------- 05 Tooltip（纯 CSS，data-tip 驱动） ---------- */
+[data-tip] { position: relative; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; left: 50%; bottom: calc(100% + 9px); z-index: 1300;
+  transform: translate(-50%, 5px) scale(.92);
+  padding: 6px 10px; border-radius: 8px; background: var(--tip-bg); color: #f8fafc;
+  font-size: 12px; line-height: 1.45; white-space: nowrap; max-width: 260px; width: max-content;
+  opacity: 0; pointer-events: none;
+  transition: opacity .16s ease .3s, transform .16s var(--ease-out) .3s;
+  box-shadow: var(--shadow-md);
+}
+[data-tip]::before {
+  content: ""; position: absolute; left: 50%; bottom: calc(100% + 4px); z-index: 1300;
+  transform: translate(-50%, 5px);
+  border: 5px solid transparent; border-top-color: var(--tip-bg);
+  opacity: 0; pointer-events: none;
+  transition: opacity .16s ease .3s, transform .16s var(--ease-out) .3s;
+}
+[data-tip]:hover::after, [data-tip]:hover::before,
+[data-tip]:focus-visible::after, [data-tip]:focus-visible::before { opacity: 1; transform: translate(-50%, 0); }
+[data-tip]:not(:hover):not(:focus-visible)::after, [data-tip]:not(:hover):not(:focus-visible)::before { transition-delay: 0s; }
+[data-tip-pos="bottom"]::after { bottom: auto; top: calc(100% + 9px); transform: translate(-50%, -5px) scale(.92); }
+[data-tip-pos="bottom"]::before { bottom: auto; top: calc(100% + 4px); transform: translate(-50%, -5px); border-top-color: transparent; border-bottom-color: var(--tip-bg); }
+[data-tip-pos="bottom"]:hover::after, [data-tip-pos="bottom"]:hover::before { transform: translate(-50%, 0); }
+[data-tip-pos="left"]::after { left: auto; right: calc(100% + 9px); bottom: auto; top: 50%; transform: translate(5px, -50%) scale(.92); }
+[data-tip-pos="left"]::before { left: auto; right: calc(100% + 4px); bottom: auto; top: 50%; transform: translate(5px, -50%); border-top-color: transparent; border-right-color: var(--tip-bg); }
+[data-tip-pos="left"]:hover::after, [data-tip-pos="left"]:hover::before { transform: translate(0, -50%); }
+[data-tip-pos="right"]::after { left: calc(100% + 9px); bottom: auto; top: 50%; transform: translate(-5px, -50%) scale(.92); }
+[data-tip-pos="right"]::before { left: calc(100% + 4px); bottom: auto; top: 50%; transform: translate(-5px, -50%); border-top-color: transparent; border-left-color: var(--tip-bg); }
+[data-tip-pos="right"]:hover::after, [data-tip-pos="right"]:hover::before { transform: translate(0, -50%); }

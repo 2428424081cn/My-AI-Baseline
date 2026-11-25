@@ -1,0 +1,40 @@
+/* Linen M3 · List | needs ../tokens.css + ../base.css */
+/* Structured MD3 List */
+.lm3-list {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  background: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-lg);
+}
+.lm3-list-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--lm3-radius-md);
+  transition: background-color var(--lm3-dur-fast);
+}
+.lm3-list-item--interactive { cursor: pointer; }
+.lm3-list-item--interactive:hover {
+  background: var(--lm3-surface-container-low);
+}
+.lm3-list-item__content { flex: 1; min-width: 0; }
+.lm3-list-item__title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--lm3-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lm3-list-item__desc {
+  font-size: 0.8rem;
+  color: var(--lm3-on-surface-variant);
+  margin-top: 2px;
+}

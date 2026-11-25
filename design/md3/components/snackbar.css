@@ -1,0 +1,74 @@
+/* Linen M3 · Snackbar / toast | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   17. Snackbar / Toast Notifications (MD3 Inverse Surface)
+   ========================================================================== */
+.lm3-toast-viewport {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: var(--lm3-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: min(400px, calc(100vw - 32px));
+  pointer-events: none;
+}
+.lm3-toast {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: var(--lm3-radius-md);
+  background: var(--lm3-inverse-surface);
+  color: var(--lm3-inverse-on-surface);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  box-shadow: var(--lm3-elev-4);
+  pointer-events: auto;
+  transform: translateY(16px) scale(0.96);
+  opacity: 0;
+  transition:
+    transform var(--lm3-dur-medium-2) var(--lm3-ease-emphasized-decel),
+    opacity var(--lm3-dur-medium-1) var(--lm3-ease-standard);
+}
+.lm3-toast.is-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.lm3-toast__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--lm3-inverse-primary);
+}
+.lm3-toast--success .lm3-toast__icon { color: #7ad3a7; }
+.lm3-toast--warning .lm3-toast__icon { color: #f0be6a; }
+.lm3-toast--error .lm3-toast__icon { color: #f5948c; }
+.lm3-toast__msg { flex: 1; }
+.lm3-toast__action {
+  border: none;
+  background: transparent;
+  color: var(--lm3-inverse-primary);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--lm3-radius-xs);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.lm3-toast__action:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.lm3-toast__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.65;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+}
+.lm3-toast__close:hover { opacity: 1; }

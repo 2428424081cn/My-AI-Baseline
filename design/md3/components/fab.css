@@ -1,0 +1,64 @@
+/* Linen M3 · FAB / extended FAB | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   03. FAB & Extended FAB (MD3 Expressive Floating Action Button)
+   ========================================================================== */
+.lm3-fab {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 56px;
+  height: 56px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--lm3-radius-lg);
+  background-color: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--lm3-elev-3);
+  transition:
+    border-radius var(--lm3-dur-medium-2) var(--lm3-ease-spring),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    box-shadow var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-fab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-fab:hover {
+  box-shadow: var(--lm3-elev-4);
+  transform: translateY(-2px);
+  border-radius: 20px;
+}
+.lm3-fab:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-fab:active { transform: translateY(0) scale(0.96); }
+
+.lm3-fab--primary {
+  background-color: var(--lm3-primary);
+  color: var(--lm3-on-primary);
+}
+.lm3-fab--surface {
+  background-color: var(--lm3-surface-container-lowest);
+  color: var(--lm3-primary);
+  border: 1px solid var(--lm3-hairline);
+}
+.lm3-fab--sm {
+  min-width: 40px;
+  height: 40px;
+  border-radius: var(--lm3-radius-md);
+  padding: 0 10px;
+}
+.lm3-fab--extended {
+  padding: 0 22px 0 18px;
+}

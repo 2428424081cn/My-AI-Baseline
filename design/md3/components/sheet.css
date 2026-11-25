@@ -1,0 +1,62 @@
+/* Linen M3 · Side sheet / bottom sheet | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   15. Side Sheet / Bottom Sheet (MD3 Modal Sheet)
+   ========================================================================== */
+.lm3-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--lm3-z-sheet);
+  background: var(--lm3-scrim);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--lm3-dur-medium-2) var(--lm3-ease-standard),
+    visibility var(--lm3-dur-medium-2);
+}
+.lm3-sheet-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.lm3-sheet {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: min(440px, calc(100vw - 24px));
+  display: flex;
+  flex-direction: column;
+  background: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-2xl);
+  box-shadow: var(--lm3-elev-5);
+  overflow: hidden;
+  transform: translateX(calc(100% + 24px));
+  transition: transform var(--lm3-dur-long-1) var(--lm3-ease-emphasized-decel);
+}
+.lm3-sheet-backdrop.is-open .lm3-sheet {
+  transform: translateX(0);
+}
+.lm3-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--lm3-hairline);
+}
+.lm3-sheet__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 22px;
+}
+.lm3-sheet__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--lm3-hairline);
+  background: var(--lm3-surface-container-low);
+}

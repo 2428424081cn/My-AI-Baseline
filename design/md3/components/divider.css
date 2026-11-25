@@ -1,0 +1,18 @@
+/* Linen M3 · Divider | needs ../tokens.css + ../base.css */
+/* Dividers */
+.lm3-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  color: var(--lm3-on-surface-muted);
+  font-size: 0.78rem;
+}
+.lm3-divider::before,
+.lm3-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--lm3-outline-variant);
+}
+.lm3-divider:empty::after { display: none; }

@@ -1,0 +1,182 @@
+/* Linen M3 · Text field (outlined / filled floating label) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   07. Text Fields (MD3 Outlined & Filled Floating Labels + Claude Composer)
+   ========================================================================== */
+.lm3-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  --lm3-field-bg: var(--lm3-surface-container-lowest);
+}
+.lm3-field__box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.lm3-field__input,
+.lm3-field__textarea {
+  width: 100%;
+  font-family: var(--lm3-font-sans);
+  font-size: 0.9375rem;
+  color: var(--lm3-on-surface);
+  background: transparent;
+  outline: none;
+  transition:
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    box-shadow var(--lm3-dur-fast) var(--lm3-ease-standard),
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-field__input::placeholder,
+.lm3-field__textarea::placeholder {
+  color: transparent;
+  transition: color var(--lm3-dur-fast);
+}
+.lm3-field__input:focus::placeholder,
+.lm3-field__textarea:focus::placeholder {
+  color: var(--lm3-on-surface-muted);
+}
+
+/* Outlined Variant */
+.lm3-field--outlined .lm3-field__input,
+.lm3-field--outlined .lm3-field__textarea {
+  padding: 14px 16px;
+  border: 1.5px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-md);
+  background: var(--lm3-field-bg);
+}
+.lm3-field--outlined .lm3-field__input { height: 50px; }
+.lm3-field--outlined .lm3-field__textarea { min-height: 108px; resize: vertical; line-height: 1.55; }
+.lm3-field--outlined .lm3-field__input:hover,
+.lm3-field--outlined .lm3-field__textarea:hover {
+  border-color: var(--lm3-outline);
+}
+.lm3-field--outlined .lm3-field__input:focus,
+.lm3-field--outlined .lm3-field__textarea:focus {
+  border-color: var(--lm3-primary);
+  box-shadow: 0 0 0 3px rgba(var(--lm3-primary-rgb), 0.14);
+}
+.lm3-field--outlined .lm3-field__label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 6px;
+  font-size: 0.92rem;
+  color: var(--lm3-on-surface-variant);
+  background: var(--lm3-field-bg);
+  pointer-events: none;
+  transform-origin: left center;
+  transition:
+    top var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    font-size var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-field--outlined .lm3-field__textarea ~ .lm3-field__label {
+  top: 22px;
+}
+.lm3-field--outlined .lm3-field__input:focus ~ .lm3-field__label,
+.lm3-field--outlined .lm3-field__input:not(:placeholder-shown) ~ .lm3-field__label,
+.lm3-field--outlined .lm3-field__textarea:focus ~ .lm3-field__label,
+.lm3-field--outlined .lm3-field__textarea:not(:placeholder-shown) ~ .lm3-field__label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--lm3-primary);
+}
+.lm3-field--outlined .lm3-field__input:not(:focus):not(:placeholder-shown) ~ .lm3-field__label,
+.lm3-field--outlined .lm3-field__textarea:not(:focus):not(:placeholder-shown) ~ .lm3-field__label {
+  color: var(--lm3-on-surface-variant);
+}
+
+/* Filled Variant (MD3 Tonal Well + Center-Expanding Underline) */
+.lm3-field--filled .lm3-field__box {
+  background: var(--lm3-surface-container);
+  border-radius: var(--lm3-radius-md) var(--lm3-radius-md) 0 0;
+  border-bottom: 1.5px solid var(--lm3-outline-variant);
+  transition: background-color var(--lm3-dur-fast);
+}
+.lm3-field--filled .lm3-field__box:hover {
+  background: var(--lm3-surface-container-high);
+}
+.lm3-field--filled .lm3-field__box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5px;
+  height: 2.5px;
+  background: var(--lm3-primary);
+  transform: scaleX(0);
+  transition: transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized);
+}
+.lm3-field--filled .lm3-field__box:focus-within::after {
+  transform: scaleX(1);
+}
+.lm3-field--filled .lm3-field__input {
+  height: 54px;
+  padding: 22px 16px 6px;
+  border: none;
+}
+.lm3-field--filled .lm3-field__label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.92rem;
+  color: var(--lm3-on-surface-variant);
+  pointer-events: none;
+  transition:
+    top var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    font-size var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    color var(--lm3-dur-fast);
+}
+.lm3-field--filled .lm3-field__input:focus ~ .lm3-field__label,
+.lm3-field--filled .lm3-field__input:not(:placeholder-shown) ~ .lm3-field__label {
+  top: 10px;
+  transform: translateY(0);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--lm3-primary);
+}
+
+/* Icons inside Field */
+.lm3-field--leading .lm3-field__input { padding-left: 44px; }
+.lm3-field--leading .lm3-field__label { left: 40px; }
+.lm3-field--trailing .lm3-field__input { padding-right: 44px; }
+.lm3-field__icon-leading,
+.lm3-field__icon-trailing {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  color: var(--lm3-on-surface-variant);
+  pointer-events: none;
+}
+.lm3-field__icon-leading { left: 14px; }
+.lm3-field__icon-trailing { right: 12px; pointer-events: auto; }
+
+.lm3-field__helper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 0 4px;
+  font-size: 0.76rem;
+  color: var(--lm3-on-surface-variant);
+}
+
+/* Error State */
+.lm3-field.is-error .lm3-field__input {
+  border-color: var(--lm3-error) !important;
+}
+.lm3-field.is-error .lm3-field__input:focus {
+  box-shadow: 0 0 0 3px rgba(var(--lm3-error-rgb), 0.14);
+}
+.lm3-field.is-error .lm3-field__label,
+.lm3-field.is-error .lm3-field__helper {
+  color: var(--lm3-error) !important;
+}

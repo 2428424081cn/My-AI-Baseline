@@ -1,0 +1,102 @@
+/* Linen M3 · Chips (assist / filter / input) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   05. Chips (MD3 Assist / Filter / Input / Suggestion)
+   ========================================================================== */
+.lm3-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.lm3-chip {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-sm);
+  background: var(--lm3-surface-container-lowest);
+  color: var(--lm3-on-surface-variant);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--lm3-dur-medium-1) var(--lm3-ease-standard),
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    transform var(--lm3-dur-fast) var(--lm3-ease-emphasized),
+    box-shadow var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-chip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast);
+}
+.lm3-chip:hover {
+  border-color: var(--lm3-outline);
+  color: var(--lm3-on-surface);
+}
+.lm3-chip:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-chip:active { transform: scale(0.97); }
+
+.lm3-chip--pill { border-radius: var(--lm3-radius-full); }
+.lm3-chip--elevated {
+  border-color: var(--lm3-hairline);
+  box-shadow: var(--lm3-elev-1);
+}
+.lm3-chip[aria-pressed="true"],
+.lm3-chip.is-selected {
+  background-color: var(--lm3-primary-container);
+  border-color: transparent;
+  color: var(--lm3-on-primary-container);
+}
+.lm3-chip__check {
+  display: inline-flex;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-right: -4px;
+  transition:
+    width var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    opacity var(--lm3-dur-fast),
+    margin var(--lm3-dur-medium-1) var(--lm3-ease-emphasized);
+}
+.lm3-chip[aria-pressed="true"] .lm3-chip__check,
+.lm3-chip.is-selected .lm3-chip__check {
+  width: 15px;
+  opacity: 1;
+  margin-right: 0;
+}
+.lm3-chip__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: -4px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.72;
+  transition: background-color var(--lm3-dur-fast), opacity var(--lm3-dur-fast);
+}
+.lm3-chip__close:hover {
+  opacity: 1;
+  background: rgba(var(--lm3-on-surface-rgb), 0.1);
+}
+.lm3-chip.is-dismissing {
+  transform: scale(0.84);
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,5 @@
+/* LineKit · Badge | needs ../tokens.css + ../base.css */
+.lk-badge { display: inline-flex; align-items: center; gap: 6px; min-height: 26px; padding: 2px 9px; border: 1px solid var(--lk-line); border-radius: 48% 52% 45% 55% / 45% 48% 52% 55%; font-family: var(--lk-font-mono); font-size: 12px; font-weight: 700; line-height: 1.4; white-space: nowrap; }
+.lk-badge--accent { border-color: var(--lk-accent); background: var(--lk-accent); color: var(--lk-on-accent); }
+.lk-badge--soft { background: var(--lk-surface-muted); }
+.lk-badge--dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }

@@ -1,0 +1,9 @@
+/* LineKit · Code block / inline code | needs ../tokens.css + ../base.css */
+/* 代码块 */
+.lk-code { position: relative; overflow: hidden; border: var(--lk-border); border-radius: var(--lk-radius); background: var(--lk-p-ink); color: var(--lk-p-paper); }
+.lk-code-head { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 7px 10px 7px 16px; border-bottom: 1px solid color-mix(in oklch, var(--lk-p-paper) 24%, transparent); font-family: var(--lk-font-mono); font-size: 12px; }
+.lk-code pre { margin: 0; padding: 18px; overflow: auto; font: 13px/1.75 var(--lk-font-mono); tab-size: 2; }
+.lk-code code { font-family: inherit; }
+.lk-code .lk-btn { --lk-btn-text: var(--lk-p-paper); --lk-btn-border: color-mix(in oklch, var(--lk-p-paper) 55%, transparent); }
+.lk-code .lk-btn:hover { background: var(--lk-p-charcoal); }
+.lk-inline-code { padding: 2px 5px; border: 1px solid var(--lk-line-soft); border-radius: 5px; background: var(--lk-surface); font: .88em var(--lk-font-mono); }

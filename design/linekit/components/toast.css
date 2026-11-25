@@ -1,0 +1,18 @@
+/* LineKit · Toast | needs ../tokens.css + ../base.css */
+/* Toast */
+.lk-toast-region { position: fixed; z-index: var(--lk-z-toast); right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: min(360px, calc(100vw - 32px)); display: grid; gap: 10px; pointer-events: none; }
+.lk-toast { display: flex; align-items: flex-start; gap: 11px; padding: 14px 15px; border: var(--lk-border); border-radius: var(--lk-radius-small); background: var(--lk-surface); color: var(--lk-text); opacity: 0; transform: translateY(8px) scale(.96); transition: opacity 180ms ease, transform 220ms var(--lk-ease); pointer-events: auto; }
+.lk-toast.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+.lk-toast.is-leaving { opacity: 0; transform: translateY(5px) scale(.97); transition-duration: 130ms; }
+.lk-toast > .lk-icon { --lk-icon-size: 21px; margin-top: 2px; }
+.lk-toast-content { flex: 1; min-width: 0; }
+.lk-toast-title { display: block; font-weight: 750; }
+.lk-toast-message { display: block; font-size: 14px; color: var(--lk-text-muted); }
+.lk-toast-close { width: 32px; height: 32px; min-height: 32px; margin: -5px -6px 0 0; border: 0; background: transparent; border-radius: 50%; }
+.lk-toast-close:hover { background: var(--lk-surface-muted); }
+
+@media (max-width: 560px) {
+  .lk-toast-close { width: 44px; height: 44px; min-height: 44px; }
+  
+  .lk-toast-region { right: 16px; }
+}

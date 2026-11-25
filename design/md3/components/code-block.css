@@ -1,0 +1,44 @@
+/* Linen M3 · Code block | needs ../tokens.css + ../base.css */
+/* Claude Artifact Code Block */
+.lm3-codeblock {
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-md);
+  background: var(--lm3-code-bg);
+  overflow: hidden;
+}
+.lm3-codeblock__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: var(--lm3-code-header);
+  border-bottom: 1px solid var(--lm3-hairline);
+  font-size: 0.78rem;
+  color: var(--lm3-on-surface-variant);
+}
+.lm3-codeblock__lang {
+  font-family: var(--lm3-font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+}
+.lm3-codeblock__pre {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-family: var(--lm3-font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--lm3-code-ink);
+  tab-size: 2;
+}
+.lm3-code {
+  font-family: var(--lm3-font-mono);
+  font-size: 0.84em;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--lm3-surface-container);
+  color: var(--lm3-primary);
+  border: 1px solid var(--lm3-hairline);
+}

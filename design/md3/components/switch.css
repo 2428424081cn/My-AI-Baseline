@@ -1,0 +1,92 @@
+/* Linen M3 · Switch | needs ../tokens.css + ../base.css */
+/* MD3 Switch — Authentic Dynamic Thumb Scale + Embedded Check/Cross Icon */
+.lm3-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--lm3-on-surface);
+}
+.lm3-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+}
+.lm3-switch__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 52px;
+  height: 32px;
+  border-radius: var(--lm3-radius-full);
+  background: var(--lm3-surface-container-highest);
+  border: 2px solid var(--lm3-outline);
+  flex-shrink: 0;
+  transition:
+    background-color var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    border-color var(--lm3-dur-medium-1) var(--lm3-ease-emphasized);
+}
+.lm3-switch__thumb {
+  position: absolute;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--lm3-outline);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lm3-surface-container-highest);
+  transition:
+    transform var(--lm3-dur-medium-2) var(--lm3-ease-spring),
+    width var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    height var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    left var(--lm3-dur-medium-2) var(--lm3-ease-spring),
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-switch__thumb svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity var(--lm3-dur-fast),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-spring);
+}
+.lm3-switch:hover .lm3-switch__thumb {
+  box-shadow: 0 0 0 8px rgba(var(--lm3-on-surface-rgb), 0.08);
+}
+.lm3-switch:active .lm3-switch__thumb {
+  width: 24px;
+  height: 24px;
+  left: 3px;
+}
+.lm3-switch__input:checked + .lm3-switch__track {
+  background: var(--lm3-primary);
+  border-color: var(--lm3-primary);
+}
+.lm3-switch__input:checked + .lm3-switch__track .lm3-switch__thumb {
+  width: 24px;
+  height: 24px;
+  left: 22px;
+  background: var(--lm3-on-primary);
+  color: var(--lm3-primary);
+}
+.lm3-switch__input:checked + .lm3-switch__track .lm3-switch__thumb svg {
+  opacity: 1;
+  transform: scale(1);
+}
+.lm3-switch__input:checked:hover + .lm3-switch__track .lm3-switch__thumb {
+  box-shadow: 0 0 0 8px rgba(var(--lm3-primary-rgb), 0.14);
+}
+.lm3-switch__input:focus-visible + .lm3-switch__track {
+  box-shadow: 0 0 0 2px var(--lm3-surface), 0 0 0 4px var(--lm3-primary);
+}
+.lm3-switch__input:disabled + .lm3-switch__track {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

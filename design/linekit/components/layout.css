@@ -1,0 +1,10 @@
+/* LineKit · Layout utilities | needs ../tokens.css + ../base.css */
+/* 少量布局工具，不强制业务页面使用 */
+.lk-stack { display: flex; flex-direction: column; gap: var(--lk-stack-gap, 16px); }
+.lk-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--lk-cluster-gap, 12px); }
+.lk-grid { display: grid; gap: var(--lk-grid-gap, 16px); }
+.lk-mt-2 { margin-top: 8px; }
+.lk-mt-4 { margin-top: 16px; }
+.lk-mt-6 { margin-top: 24px; }
+.lk-text-muted { color: var(--lk-text-muted); }
+.lk-text-accent { color: var(--lk-accent-text); }

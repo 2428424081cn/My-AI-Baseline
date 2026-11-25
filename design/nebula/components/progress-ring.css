@@ -1,0 +1,13 @@
+/* Nebula UI · Progress ring | needs ../tokens.css + ../base.css */
+/* ---------- 05 进度环 ---------- */
+.ui-ring-box { position: relative; display: inline-grid; place-items: center; }
+.ui-ring { width: 96px; height: 96px; transform: rotate(-90deg); }
+.ui-ring__track { fill: none; stroke: var(--gray-100); stroke-width: 3.4; }
+.ui-ring__val {
+  fill: none; stroke: var(--brand-500); stroke-width: 3.4; stroke-linecap: round;
+  stroke-dasharray: 100; stroke-dashoffset: calc(100 - var(--p, 0));
+  transition: stroke-dashoffset 1s var(--ease-expo), stroke .3s;
+}
+.ui-ring__label { position: absolute; text-align: center; line-height: 1.25; }
+.ui-ring__label b { display: block; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.ui-ring__label span { font-size: 11px; color: var(--text-3); }

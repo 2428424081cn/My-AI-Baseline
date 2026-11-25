@@ -1,0 +1,3 @@
+/* LineKit · Note (quote block) | needs ../tokens.css + ../base.css */
+.lk-note { padding: 16px 18px; border-left: 2px solid var(--lk-accent); background: var(--lk-surface); }
+.lk-note p { margin: 0; max-width: 70ch; }

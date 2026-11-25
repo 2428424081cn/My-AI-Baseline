@@ -1,0 +1,2 @@
+/* LineKit · Spinner | needs ../tokens.css + ../base.css */
+.lk-spinner { width: 22px; height: 22px; border: 2px solid var(--lk-line-soft); border-top-color: var(--lk-text); border-radius: 50%; animation: lk-spin .8s linear infinite; }

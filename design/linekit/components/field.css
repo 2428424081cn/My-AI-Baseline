@@ -1,0 +1,27 @@
+/* LineKit · Text field / select / textarea | needs ../tokens.css + ../base.css */
+/* 表单 */
+.lk-field { display: grid; gap: 7px; }
+.lk-label { font-size: 14px; font-weight: 700; }
+.lk-label-note { color: var(--lk-text-muted); font-weight: 400; }
+.lk-input, .lk-select, .lk-textarea {
+  width: 100%;
+  min-height: 46px;
+  border: var(--lk-border);
+  border-radius: var(--lk-radius-small);
+  background: var(--lk-surface);
+  padding: 10px 13px;
+  outline: none;
+  transition: transform var(--lk-speed) var(--lk-ease), background-color var(--lk-speed) ease, border-color var(--lk-speed) ease;
+}
+.lk-input:hover, .lk-select:hover, .lk-textarea:hover { background: var(--lk-surface-muted); }
+.lk-input:focus, .lk-select:focus, .lk-textarea:focus { border-color: var(--lk-accent); outline: 2px dashed var(--lk-focus); outline-offset: 3px; }
+.lk-input::placeholder, .lk-textarea::placeholder { color: var(--lk-text-muted); opacity: .8; }
+.lk-input:disabled, .lk-select:disabled, .lk-textarea:disabled { opacity: .48; cursor: not-allowed; }
+.lk-textarea { min-height: 112px; resize: vertical; }
+.lk-select { appearance: none; padding-right: 42px; background-image: linear-gradient(45deg, transparent 50%, var(--lk-text) 50%), linear-gradient(135deg, var(--lk-text) 50%, transparent 50%); background-position: calc(100% - 18px) 20px, calc(100% - 12px) 20px; background-size: 6px 6px; background-repeat: no-repeat; }
+.lk-input-wrap { position: relative; }
+.lk-input-wrap > .lk-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); pointer-events: none; --lk-icon-size: 20px; }
+.lk-input-wrap > .lk-input { padding-left: 43px; }
+.lk-hint, .lk-error { margin: 0; font-size: 13px; color: var(--lk-text-muted); }
+.lk-error { color: var(--lk-accent-text); }
+.lk-field.has-error .lk-input, .lk-field.has-error .lk-select, .lk-field.has-error .lk-textarea { border-color: var(--lk-accent); }

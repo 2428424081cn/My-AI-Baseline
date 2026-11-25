@@ -1,0 +1,59 @@
+/* Nebula UI · Button | needs ../tokens.css + ../base.css */
+/* ---------- 04 按钮 ---------- */
+.ui-btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 38px; padding: 0 16px; overflow: hidden; white-space: nowrap; user-select: none;
+  border: 1px solid transparent; border-radius: var(--r-md); cursor: pointer;
+  font: 500 14px/1 var(--font); letter-spacing: .01em;
+  transition: transform .16s var(--ease-out), box-shadow .22s var(--ease-out),
+              background-color .18s, border-color .18s, color .18s, opacity .18s;
+}
+.ui-btn .ui-icon { width: 16px; height: 16px; }
+.ui-btn:active:not(:disabled) { transform: translateY(1px) scale(.99); }
+.ui-btn:disabled, .ui-btn[disabled] { opacity: .48; cursor: not-allowed; box-shadow: none; transform: none; }
+
+.ui-btn--primary {
+  background: var(--brand-600); color: #fff;
+  box-shadow: 0 1px 2px rgba(79,70,229,.4), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.ui-btn--primary:hover:not(:disabled) {
+  background: var(--brand-700); transform: translateY(-1px);
+  box-shadow: 0 6px 16px -4px rgba(79,70,229,.55), inset 0 1px 0 rgba(255,255,255,.14);
+}
+.ui-btn--primary:active:not(:disabled) { transform: translateY(0); box-shadow: 0 1px 2px rgba(79,70,229,.4); }
+
+.ui-btn--secondary {
+  background: var(--surface); color: var(--text-1); border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.ui-btn--secondary:hover:not(:disabled) { background: var(--gray-50); border-color: var(--gray-300); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.ui-btn--ghost { background: transparent; color: var(--text-2); }
+.ui-btn--ghost:hover:not(:disabled) { background: var(--gray-100); color: var(--text-1); }
+
+.ui-btn--danger { background: var(--danger); color: #fff; box-shadow: 0 1px 2px rgba(239,68,68,.4); }
+.ui-btn--danger:hover:not(:disabled) { background: #dc2626; transform: translateY(-1px); box-shadow: 0 6px 16px -4px rgba(239,68,68,.5); }
+
+.ui-btn--dashed { background: transparent; color: var(--text-2); border: 1.5px dashed var(--gray-300); }
+.ui-btn--dashed:hover:not(:disabled) { color: var(--brand-600); border-color: var(--brand-400); background: var(--brand-tint); }
+
+.ui-btn--inverse { background: #fff; color: var(--brand-700); box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+.ui-btn--inverse:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.25); background: #fff; }
+
+.ui-btn--lg { height: 44px; padding: 0 20px; font-size: 15px; border-radius: var(--r-md); }
+.ui-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; border-radius: 8px; }
+.ui-btn--xs { height: 26px; padding: 0 9px; font-size: 12px; border-radius: 7px; gap: 5px; }
+.ui-btn--xs .ui-icon { width: 13px; height: 13px; }
+
+.ui-btn--icon { width: 38px; padding: 0; }
+.ui-btn--icon.ui-btn--sm { width: 32px; }
+.ui-btn--icon.ui-btn--lg { width: 44px; }
+
+/* 加载态：内容隐藏，中心旋转 */
+.ui-btn--loading { pointer-events: none; }
+.ui-btn--loading > * { visibility: hidden; }
+.ui-btn--loading::after {
+  content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-top-color: currentColor; animation: ui-spin .7s linear infinite;
+}

@@ -1,0 +1,80 @@
+/* Linen M3 · Dropdown menu | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   16. Dropdown Menu (MD3 Elevated Surface + Origin Scale)
+   ========================================================================== */
+.lm3-dropdown {
+  position: relative;
+  display: inline-flex;
+}
+.lm3-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: var(--lm3-z-dropdown);
+  min-width: 210px;
+  padding: 6px;
+  background: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-lg);
+  box-shadow: var(--lm3-elev-3);
+  transform-origin: top left;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.95);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--lm3-dur-fast) var(--lm3-ease-standard),
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized-decel),
+    visibility var(--lm3-dur-fast);
+}
+.lm3-menu--end {
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+.lm3-dropdown.is-open .lm3-menu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  pointer-events: auto;
+}
+.lm3-menu__item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: var(--lm3-radius-sm);
+  background: transparent;
+  color: var(--lm3-on-surface);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.86rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--lm3-dur-fast);
+}
+.lm3-menu__item:hover {
+  background: var(--lm3-surface-container);
+}
+.lm3-menu__item.is-selected {
+  background: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  font-weight: 500;
+}
+.lm3-menu__item--danger {
+  color: var(--lm3-error);
+}
+.lm3-menu__hint {
+  margin-left: auto;
+  font-size: 0.74rem;
+  color: var(--lm3-on-surface-muted);
+  font-family: var(--lm3-font-mono);
+}
+.lm3-menu__divider {
+  height: 1px;
+  margin: 5px 6px;
+  background: var(--lm3-hairline);
+}

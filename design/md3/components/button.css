@@ -1,0 +1,135 @@
+/* Linen M3 · Button | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   02. Buttons (MD3 Filled / Tonal / Elevated / Outlined / Text / Danger)
+   ========================================================================== */
+.lm3-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: var(--lm3-radius-full);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    box-shadow var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    transform var(--lm3-dur-fast) var(--lm3-ease-emphasized),
+    color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-btn:hover::before { opacity: var(--lm3-state-hover); }
+.lm3-btn:active::before { opacity: var(--lm3-state-pressed); }
+.lm3-btn:active:not(:disabled) { transform: scale(0.98); }
+.lm3-btn:disabled,
+.lm3-btn[aria-disabled="true"] {
+  opacity: 0.44;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Variants */
+.lm3-btn--filled {
+  background-color: var(--lm3-primary);
+  color: var(--lm3-on-primary);
+}
+.lm3-btn--filled:hover {
+  box-shadow: var(--lm3-elev-1);
+}
+
+.lm3-btn--tonal {
+  background-color: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+}
+.lm3-btn--tonal:hover {
+  box-shadow: var(--lm3-elev-1);
+}
+
+.lm3-btn--secondary-tonal {
+  background-color: var(--lm3-secondary-container);
+  color: var(--lm3-on-secondary-container);
+}
+
+.lm3-btn--elevated {
+  background-color: var(--lm3-surface-container-lowest);
+  color: var(--lm3-primary);
+  border-color: var(--lm3-hairline);
+  box-shadow: var(--lm3-elev-1);
+}
+.lm3-btn--elevated:hover {
+  box-shadow: var(--lm3-elev-2);
+  transform: translateY(-1px);
+}
+
+.lm3-btn--outlined {
+  background-color: transparent;
+  color: var(--lm3-on-surface);
+  border-color: var(--lm3-outline-variant);
+}
+.lm3-btn--outlined:hover {
+  border-color: var(--lm3-outline);
+}
+
+.lm3-btn--text {
+  background-color: transparent;
+  color: var(--lm3-primary);
+  padding: 0 14px;
+}
+
+.lm3-btn--danger {
+  background-color: var(--lm3-error);
+  color: var(--lm3-on-error);
+}
+
+/* Sizes */
+.lm3-btn--sm {
+  height: 32px;
+  padding: 0 14px;
+  font-size: 0.8125rem;
+  gap: 6px;
+}
+.lm3-btn--lg {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 0.9375rem;
+  gap: 10px;
+}
+
+/* Loading State */
+.lm3-btn.is-loading {
+  pointer-events: none;
+}
+.lm3-btn.is-loading > *:not(.lm3-btn__spinner) {
+  opacity: 0.25;
+}
+.lm3-btn__spinner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: lm3-spin 650ms linear infinite;
+}

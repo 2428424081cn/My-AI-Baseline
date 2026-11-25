@@ -1,0 +1,83 @@
+/* Linen M3 · Card (elevated / filled / outlined / editorial) | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   06. Cards (MD3 Elevated / Filled / Outlined + Editorial Interactive)
+   ========================================================================== */
+.lm3-card {
+  position: relative;
+  border-radius: var(--lm3-radius-lg);
+  padding: 20px;
+  color: var(--lm3-on-surface);
+  transition:
+    transform var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    box-shadow var(--lm3-dur-medium-1) var(--lm3-ease-emphasized),
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard);
+}
+.lm3-card--elevated {
+  background-color: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-hairline);
+  box-shadow: var(--lm3-elev-1);
+}
+.lm3-card--filled {
+  background-color: var(--lm3-surface-container);
+  border: 1px solid transparent;
+}
+.lm3-card--outlined {
+  background-color: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-outline-variant);
+}
+.lm3-card--editorial {
+  background: linear-gradient(
+    180deg,
+    var(--lm3-surface-container-lowest) 0%,
+    var(--lm3-surface-container-low) 100%
+  );
+  border: 1px solid var(--lm3-outline-variant);
+  box-shadow: var(--lm3-elev-1);
+}
+.lm3-card--interactive {
+  cursor: pointer;
+  overflow: hidden;
+}
+.lm3-card--interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lm3-elev-3);
+  border-color: rgba(var(--lm3-primary-rgb), 0.32);
+}
+.lm3-card--interactive:active {
+  transform: translateY(0) scale(0.992);
+}
+.lm3-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.lm3-card__title {
+  margin: 0;
+  font-family: var(--lm3-font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+.lm3-card__subtitle {
+  margin: 4px 0 0;
+  font-size: 0.825rem;
+  color: var(--lm3-on-surface-variant);
+}
+.lm3-card__body {
+  font-size: 0.875rem;
+  line-height: 1.62;
+  color: var(--lm3-on-surface-variant);
+}
+.lm3-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--lm3-hairline);
+}

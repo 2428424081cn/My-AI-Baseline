@@ -1,0 +1,5 @@
+/* LineKit · Empty state | needs ../tokens.css + ../base.css */
+.lk-empty { display: grid; justify-items: center; gap: 12px; padding: 40px 20px; text-align: center; }
+.lk-empty .lk-icon { --lk-icon-size: 48px; --lk-icon-stroke: 1.4; transform: rotate(-5deg); }
+.lk-empty-title { margin: 0; font-family: var(--lk-font-display); font-size: 26px; }
+.lk-empty-text { max-width: 42ch; margin: 0; color: var(--lk-text-muted); }

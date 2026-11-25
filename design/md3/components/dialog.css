@@ -1,0 +1,86 @@
+/* Linen M3 · Dialog | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   14. Dialog / Modal (MD3 28px Surface + Emphasized Scale Entrance)
+   ========================================================================== */
+.lm3-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--lm3-z-dialog);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--lm3-scrim);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--lm3-dur-medium-1) var(--lm3-ease-standard),
+    visibility var(--lm3-dur-medium-1);
+}
+.lm3-dialog-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.lm3-dialog {
+  width: 100%;
+  max-width: 500px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  background: var(--lm3-surface-container-lowest);
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-2xl);
+  box-shadow: var(--lm3-elev-5);
+  overflow: hidden;
+  transform: translateY(16px) scale(0.95);
+  opacity: 0;
+  transition:
+    transform var(--lm3-dur-medium-2) var(--lm3-ease-emphasized-decel),
+    opacity var(--lm3-dur-medium-1) var(--lm3-ease-standard);
+}
+.lm3-dialog-backdrop.is-open .lm3-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.lm3-dialog--lg { max-width: 640px; }
+.lm3-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 24px 24px 12px;
+}
+.lm3-dialog__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--lm3-radius-md);
+  background: var(--lm3-primary-container);
+  color: var(--lm3-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.lm3-dialog__title {
+  margin: 0;
+  font-family: var(--lm3-font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+.lm3-dialog__body {
+  padding: 8px 24px 20px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--lm3-on-surface-variant);
+}
+.lm3-dialog__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 24px 22px;
+}

@@ -1,0 +1,64 @@
+/* Linen M3 · Checkbox | needs ../tokens.css + ../base.css */
+/* MD3 Checkbox with SVG Stroke-Draw Animation */
+.lm3-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.9rem;
+  color: var(--lm3-on-surface);
+}
+.lm3-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.lm3-checkbox__box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--lm3-outline);
+  background: transparent;
+  flex-shrink: 0;
+  transition:
+    background-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    border-color var(--lm3-dur-fast) var(--lm3-ease-standard),
+    transform var(--lm3-dur-fast) var(--lm3-ease-spring);
+}
+.lm3-checkbox__box::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  background: var(--lm3-primary);
+  opacity: 0;
+  transition: opacity var(--lm3-dur-fast);
+}
+.lm3-checkbox:hover .lm3-checkbox__box::before { opacity: 0.08; }
+.lm3-checkbox__box svg {
+  width: 14px;
+  height: 14px;
+  color: var(--lm3-on-primary);
+}
+.lm3-checkbox__box svg path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  transition: stroke-dashoffset var(--lm3-dur-medium-1) var(--lm3-ease-emphasized-decel);
+}
+.lm3-checkbox__input:checked + .lm3-checkbox__box {
+  background: var(--lm3-primary);
+  border-color: var(--lm3-primary);
+  transform: scale(1.04);
+}
+.lm3-checkbox__input:checked + .lm3-checkbox__box svg path {
+  stroke-dashoffset: 0;
+}
+.lm3-checkbox__input:focus-visible + .lm3-checkbox__box {
+  box-shadow: 0 0 0 2px var(--lm3-surface), 0 0 0 4px var(--lm3-primary);
+}

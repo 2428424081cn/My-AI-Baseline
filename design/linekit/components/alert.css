@@ -1,0 +1,8 @@
+/* LineKit · Alert | needs ../tokens.css + ../base.css */
+.lk-alert { display: flex; align-items: flex-start; gap: 12px; padding: 15px 16px; border: var(--lk-border); border-radius: var(--lk-radius-small); background: var(--lk-surface); }
+.lk-alert > .lk-icon { margin-top: 2px; --lk-icon-size: 21px; }
+.lk-alert-content { flex: 1; min-width: 0; }
+.lk-alert-title { margin: 0 0 2px; font-weight: 750; }
+.lk-alert-text { margin: 0; font-size: 14px; color: var(--lk-text-muted); }
+.lk-alert--accent { border-color: var(--lk-accent); }
+.lk-alert--accent > .lk-icon { color: var(--lk-accent-text); }

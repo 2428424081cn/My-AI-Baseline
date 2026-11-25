@@ -1,0 +1,3 @@
+/* LineKit · Divider | needs ../tokens.css + ../base.css */
+.lk-divider { border: 0; border-top: 1.5px solid var(--lk-line); margin: 24px 0; }
+.lk-divider--dash { border-top-style: dashed; border-color: var(--lk-line-soft); }

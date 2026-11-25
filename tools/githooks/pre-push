@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# pre-push hook: block direct pushes to main and non-fast-forward (force) pushes (SPEC.md §8.3, Appendix B.2)
+# Install: git config core.hooksPath tools/githooks
+set -euo pipefail
+
+zero="0000000000000000000000000000000000000000"
+while read -r _local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    echo "x Direct push to main is blocked"
+    exit 1
+  fi
+  if [ "$remote_sha" != "$zero" ] && ! git merge-base --is-ancestor "$remote_sha" "$local_sha"; then
+    echo "x Non-fast-forward push (force push) is blocked"
+    exit 1
+  fi
+done

@@ -1,0 +1,28 @@
+/* Nebula UI · Alert | needs ../tokens.css + ../base.css */
+/* ---------- 05 反馈：Alert ---------- */
+.ui-alert {
+  display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px;
+  border: 1px solid var(--border); border-left-width: 3px; border-radius: var(--r-md);
+  background: var(--surface); overflow: hidden;
+  transition: opacity .3s var(--ease-out), transform .3s var(--ease-out),
+              height .3s var(--ease-out), padding .3s var(--ease-out), margin .3s;
+}
+.ui-alert__icon { flex: none; margin-top: 1px; }
+.ui-alert__body { flex: 1; min-width: 0; }
+.ui-alert__title { font-size: 13.5px; font-weight: 650; }
+.ui-alert__msg { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+.ui-alert__close {
+  flex: none; display: grid; place-items: center; width: 26px; height: 26px; margin: -3px -4px 0 0;
+  border: 0; border-radius: 7px; background: transparent; color: var(--text-3); cursor: pointer;
+  transition: background .15s, color .15s, transform .2s var(--ease-spring);
+}
+.ui-alert__close:hover { background: var(--gray-100); color: var(--text-1); transform: rotate(90deg); }
+.ui-alert--success { border-left-color: var(--success); background: var(--success-tint); }
+.ui-alert--success .ui-alert__icon, .ui-alert--success .ui-alert__title { color: var(--success-text); }
+.ui-alert--warning { border-left-color: var(--warning); background: var(--warning-tint); }
+.ui-alert--warning .ui-alert__icon, .ui-alert--warning .ui-alert__title { color: var(--warning-text); }
+.ui-alert--danger { border-left-color: var(--danger); background: var(--danger-tint); }
+.ui-alert--danger .ui-alert__icon, .ui-alert--danger .ui-alert__title { color: var(--danger-text); }
+.ui-alert--info { border-left-color: var(--info); background: var(--info-tint); }
+.ui-alert--info .ui-alert__icon, .ui-alert--info .ui-alert__title { color: var(--info-text); }
+.ui-alert--closing { height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; opacity: 0; transform: translateY(-6px); border-width: 0; margin: 0 !important; }

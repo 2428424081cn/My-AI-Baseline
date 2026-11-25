@@ -1,0 +1,58 @@
+/* Linen M3 · Avatar / avatar group | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   21. Avatars & Overlapping Avatar Groups
+   ========================================================================== */
+.lm3-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--lm3-primary-container);
+  color: var(--lm3-on-primary-container);
+  font-family: var(--lm3-font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  user-select: none;
+}
+.lm3-avatar--sm { width: 30px; height: 30px; font-size: 0.78rem; }
+.lm3-avatar--lg { width: 52px; height: 52px; font-size: 1.15rem; }
+.lm3-avatar--sage {
+  background: var(--lm3-tertiary-container);
+  color: var(--lm3-on-tertiary-container);
+}
+.lm3-avatar--stone {
+  background: var(--lm3-secondary-container);
+  color: var(--lm3-on-secondary-container);
+}
+.lm3-avatar--solid {
+  background: var(--lm3-primary);
+  color: var(--lm3-on-primary);
+}
+.lm3-avatar__status {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--lm3-success);
+  border: 2px solid var(--lm3-surface-container-lowest);
+}
+.lm3-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+.lm3-avatar-group .lm3-avatar {
+  border: 2px solid var(--lm3-surface-container-lowest);
+  margin-left: -10px;
+  transition: transform var(--lm3-dur-fast) var(--lm3-ease-spring);
+}
+.lm3-avatar-group .lm3-avatar:first-child { margin-left: 0; }
+.lm3-avatar-group .lm3-avatar:hover {
+  transform: translateY(-3px);
+  z-index: 2;
+}

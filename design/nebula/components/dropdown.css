@@ -1,0 +1,28 @@
+/* Nebula UI · Dropdown | needs ../tokens.css + ../base.css */
+/* ---------- 06 Dropdown ---------- */
+.ui-dropdown { position: relative; display: inline-flex; }
+.ui-menu {
+  position: absolute; top: calc(100% + 7px); left: 0; z-index: 1050; min-width: 184px;
+  padding: 6px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); box-shadow: var(--shadow-lg);
+  opacity: 0; visibility: hidden; transform: translateY(6px) scale(.97); transform-origin: top left;
+  transition: opacity .18s var(--ease-out), transform .22s var(--ease-spring), visibility .18s;
+}
+.ui-menu--right { left: auto; right: 0; transform-origin: top right; }
+.ui-dropdown.open .ui-menu { opacity: 1; visibility: visible; transform: none; }
+.ui-menu__item {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 10px;
+  border: 0; border-radius: 8px; background: transparent; cursor: pointer; text-align: left;
+  font: 400 13.5px/1.4 var(--font); color: var(--text-1);
+  transition: background .14s, color .14s;
+}
+.ui-menu__item .ui-icon { width: 15px; height: 15px; color: var(--text-3); transition: color .14s; }
+.ui-menu__item:hover { background: var(--gray-100); }
+.ui-menu__item:hover .ui-icon { color: var(--brand-500); }
+.ui-menu__item--danger, .ui-menu__item--danger .ui-icon { color: var(--danger-text); }
+.ui-menu__item--danger:hover { background: var(--danger-tint); }
+.ui-menu__sep { height: 1px; margin: 6px 4px; background: var(--border-2); }
+.ui-menu__label { padding: 7px 10px 3px; font-size: 11px; font-weight: 600; color: var(--text-3); letter-spacing: .04em; text-transform: uppercase; }
+.ui-menu__head { display: flex; align-items: center; gap: 10px; padding: 8px 10px 10px; border-bottom: 1px solid var(--border-2); margin: -2px -2px 6px; padding-bottom: 10px; }
+.ui-menu__head b { display: block; font-size: 13.5px; }
+.ui-menu__head span { display: block; font-size: 12px; color: var(--text-3); }

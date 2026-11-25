@@ -1,0 +1,19 @@
+/* LineKit · Dialog (native dialog) | needs ../tokens.css + ../base.css */
+/* 弹窗：原生 dialog，支持 Escape 和背景关闭 */
+.lk-dialog { width: min(560px, calc(100% - 32px)); max-height: min(84dvh, 760px); margin: auto; padding: 0; overflow: auto; border: var(--lk-border); border-radius: var(--lk-radius); background: var(--lk-surface); color: var(--lk-text); }
+.lk-dialog::backdrop { background: color-mix(in oklch, var(--lk-p-ink) 62%, transparent); }
+.lk-dialog[open] { animation: lk-dialog-in 240ms var(--lk-ease); }
+.lk-dialog.is-closing { opacity: 0; transform: scale(.97); transition: opacity 140ms ease, transform 140ms ease; }
+.lk-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 22px 24px 14px; }
+.lk-dialog-title { margin: 0; font-family: var(--lk-font-display); font-size: 28px; line-height: 1.2; }
+.lk-dialog-body { padding: 4px 24px 24px; }
+.lk-dialog-footer { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; padding: 16px 24px 22px; border-top: 1px dashed var(--lk-line-soft); }
+
+@keyframes lk-dialog-in { from { opacity: 0; transform: scale(.95) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+@media (max-width: 560px) {
+  .lk-dialog-header { padding: 18px 18px 12px; }
+  .lk-dialog-body { padding: 4px 18px 20px; }
+  .lk-dialog-footer { padding: 14px 18px 18px; }
+  .lk-dialog-footer .lk-btn { flex: 1; }
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# commit-msg hook: enforce Conventional Commits title and required trailers (SPEC.md §8.2, Appendix B.1)
+# Install: git config core.hooksPath tools/githooks
+set -euo pipefail
+
+msg_file="${1:?missing commit message file}"
+
+head -n1 "$msg_file" | grep -qE '^(feat|fix|refactor|test|docs|chore|perf|build|ci)(\(.+\))?: .+' \
+  || { echo "x Commit title does not follow Conventional Commits"; exit 1; }
+
+for key in Task Agent; do
+  grep -qE "^${key}: .+" "$msg_file" \
+    || { echo "x Missing required trailer: ${key}"; exit 1; }
+done

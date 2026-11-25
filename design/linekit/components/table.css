@@ -1,0 +1,13 @@
+/* LineKit · Table | needs ../tokens.css + ../base.css */
+.lk-table-wrap { overflow-x: auto; border: var(--lk-border); border-radius: var(--lk-radius); background: var(--lk-surface); }
+.lk-table { width: 100%; border-collapse: collapse; text-align: left; }
+.lk-table th, .lk-table td { padding: 14px 16px; border-bottom: 1px dashed var(--lk-line-soft); vertical-align: middle; }
+.lk-table th { font-family: var(--lk-font-mono); font-size: 12px; letter-spacing: .05em; white-space: nowrap; }
+.lk-table td { font-size: 14px; }
+.lk-table tbody tr { transition: background-color var(--lk-speed) ease; }
+.lk-table tbody tr:hover { background: var(--lk-surface-muted); }
+.lk-table tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 560px) {
+  .lk-table th, .lk-table td { padding: 12px; }
+}

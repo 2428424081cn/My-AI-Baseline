@@ -1,0 +1,5 @@
+/* LineKit · Tooltip (CSS only) | needs ../tokens.css + ../base.css */
+/* 提示气泡：触发元素同时支持键盘 focus */
+.lk-tooltip { position: relative; }
+.lk-tooltip::after { content: attr(data-lk-tooltip); position: absolute; z-index: var(--lk-z-dropdown); left: 50%; bottom: calc(100% + 9px); width: max-content; max-width: 220px; padding: 6px 9px; border-radius: 7px; background: var(--lk-text); color: var(--lk-surface); font-family: var(--lk-font-sans); font-size: 12px; line-height: 1.4; opacity: 0; pointer-events: none; transform: translate(-50%, 5px) scale(.95); transition: opacity 160ms ease, transform 180ms var(--lk-ease); }
+.lk-tooltip:hover::after, .lk-tooltip:focus-visible::after { opacity: 1; transform: translate(-50%, 0) scale(1); }

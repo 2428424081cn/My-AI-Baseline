@@ -1,0 +1,65 @@
+/* Linen M3 · Accordion | needs ../tokens.css + ../base.css */
+/* ==========================================================================
+   19. Accordion / Expansion Panels (Smooth CSS Grid Height Animation)
+   ========================================================================== */
+.lm3-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lm3-accordion__item {
+  border: 1px solid var(--lm3-outline-variant);
+  border-radius: var(--lm3-radius-lg);
+  background: var(--lm3-surface-container-lowest);
+  overflow: hidden;
+  transition: border-color var(--lm3-dur-fast), box-shadow var(--lm3-dur-medium-1);
+}
+.lm3-accordion__item.is-open {
+  border-color: rgba(var(--lm3-primary-rgb), 0.35);
+  box-shadow: var(--lm3-elev-1);
+}
+.lm3-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  color: var(--lm3-on-surface);
+  font-family: var(--lm3-font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--lm3-dur-fast);
+}
+.lm3-accordion__trigger:hover {
+  background: var(--lm3-surface-container-low);
+}
+.lm3-accordion__chevron {
+  color: var(--lm3-on-surface-variant);
+  transition: transform var(--lm3-dur-medium-2) var(--lm3-ease-emphasized);
+}
+.lm3-accordion__item.is-open .lm3-accordion__chevron {
+  transform: rotate(180deg);
+  color: var(--lm3-primary);
+}
+.lm3-accordion__collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--lm3-dur-medium-2) var(--lm3-ease-emphasized);
+}
+.lm3-accordion__item.is-open .lm3-accordion__collapse {
+  grid-template-rows: 1fr;
+}
+.lm3-accordion__body {
+  overflow: hidden;
+}
+.lm3-accordion__content {
+  padding: 0 20px 18px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--lm3-on-surface-variant);
+}
